@@ -1,0 +1,9 @@
+.block-container{
+    list-style-type: none;
+    margin: 10px;
+}
+.block-lists{
+    display: flex;
+    flex-wrap: wrap;
+
+}

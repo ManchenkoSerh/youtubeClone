@@ -1,0 +1,21 @@
+.container-item{
+    width: 250px;
+}
+.container-item__img{
+    width: 250px;
+    height: 150px;
+}
+.container-item__info{
+    margin-left: 20px ;
+}
+.container-item__info p{
+    margin: 0;
+    font: 14px Roboto,Arial,sans-serif ;
+    color:#606060
+}
+.container-item__info a{
+    font-size: 1.2em;
+    color: black;
+    font: 16px Roboto,Arial,sans-serif ;
+}
+
