@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import InputSearch from "./containers/input-search/InputSearch";
 function App() {
   return (
-
     <BrowserRouter>
     <div >
       <Grid padded >
