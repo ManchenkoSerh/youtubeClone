@@ -46,7 +46,6 @@ export const getCommentsSuccess=(data)=>({
     payload:data
 })
 export const getComments=(idChennal)=>(dispatch)=>{
-    debugger
     fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=${ApiKey}`)
         .then(res=>res.json())
         .then((res) => dispatch(getCommentsSuccess(res)))

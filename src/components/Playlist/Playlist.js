@@ -5,17 +5,15 @@ import VideoList from "../../containers/video-list/VideoList"
 import CommentsItem from "../comments-item/CommentsItem"
 
 const PlayList=({comments=[],getComments,obj})=>{
+
+    async function parseComments() {
+        await getComments(obj.id)
+    }
     useEffect(() => {
-        const timer = window.setTimeout(() => {
-            getComments(obj.id);
-        }, 1000);
-        return () => {
-            // Return callback to run on unmount.
-            window.clearInterval(timer);
-        };
-    }, []);
-    console.log(obj);
-    console.log(comments);
+        parseComments(obj.id)
+        console.log('parsec')
+    },[obj])
+
     const commentsAll=comments.map((item)=>{
         const {id,...itemprops}=item;
         return(
