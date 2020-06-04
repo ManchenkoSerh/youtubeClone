@@ -15,6 +15,7 @@ const ListVideo=({state=[],getSearchVideo,searchWord})=>{
         };
     }, []);
 
+
 console.log(state)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;

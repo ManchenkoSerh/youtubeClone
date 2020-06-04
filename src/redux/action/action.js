@@ -1,11 +1,11 @@
 import {GET_ALL_VIDEOS_SUCCESS,GET_VIDEO_SUCCESS,GET_ICON_CHENNAL_SUCCESS,GET_VIDEO_INFO_SUCCESS,GET_SEARCH_VIDEO_SUCCESS,GET_COMMENT_VIDEO_SUCCESS} from "../types/types";
-
+const ApiKey="AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8"
 export const getAllDataSuccess=(data)=>({
     type:GET_ALL_VIDEOS_SUCCESS,
     payload:data
 })
 export const getAllData=()=>(dispatch)=>{
-    fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8", {
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
         })
         .then((res)=> res.json())
         .then(res=>dispatch(getAllDataSuccess(res)))
@@ -37,7 +37,7 @@ export const getSearchVideoSuccess=(data)=>({
 })
 
 export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8` , {})
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}` , {})
     .then((res) => res.json())
     .then((res) => dispatch(getSearchVideoSuccess(res)))
 }
@@ -46,7 +46,7 @@ export const getCommentsSuccess=(data)=>({
     payload:data
 })
 export const getComments=(idChennal)=>(dispatch)=>{
-    fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8`)
+    fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=${ApiKey}`)
         .then(res=>res.json())
         .then((res) => dispatch(getCommentsSuccess(res)))
 }
