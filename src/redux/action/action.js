@@ -5,7 +5,7 @@ export const getAllDataSuccess=(data)=>({
     payload:data
 })
 export const getAllData=()=>(dispatch)=>{
-    fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=AIzaSyCjYk7dS22esR9CGZfQ7rc5qe75W2EqSLU", {
+    fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8", {
         })
         .then((res)=> res.json())
         .then(res=>dispatch(getAllDataSuccess(res)))
@@ -37,7 +37,7 @@ export const getSearchVideoSuccess=(data)=>({
 })
 
 export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyCjYk7dS22esR9CGZfQ7rc5qe75W2EqSLU` , {})
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8` , {})
     .then((res) => res.json())
     .then((res) => dispatch(getSearchVideoSuccess(res)))
 }
@@ -46,8 +46,7 @@ export const getCommentsSuccess=(data)=>({
     payload:data
 })
 export const getComments=(idChennal)=>(dispatch)=>{
-    debugger
-    fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=AIzaSyCjYk7dS22esR9CGZfQ7rc5qe75W2EqSLU`)
+    fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8`)
         .then(res=>res.json())
         .then((res) => dispatch(getCommentsSuccess(res)))
 }
