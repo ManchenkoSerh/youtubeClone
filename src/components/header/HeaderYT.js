@@ -2,12 +2,17 @@ import React from 'react';
 import {Grid} from 'semantic-ui-react'
 import {Input,Button,Icon} from 'semantic-ui-react';
 import "./HeaderYT.scss"
-import { Link } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 import {keyWord} from "../../redux/action/action";
 import {connect} from "react-redux"
 
 function HeaderYT({dispatch}) {
     let input;
+    let history = useHistory();
+
+    function handleClick() {
+        history.push("/home");
+    }
     return (
         <Grid.Row>
           <Grid.Column  width={3}>
@@ -27,7 +32,7 @@ function HeaderYT({dispatch}) {
               }}>
               <div className="ui action input">
                   <div className="ui right icon input">
-                  <input ref={(node)=>input=node} className="search-panel" placeholder="Введите текст"/>
+                  <input ref={(node)=>input=node}   onclick={handleClick} className="search-panel" placeholder="Введите текст"/>
                       <i className="keyboard icon"></i>
                   </div>
 
