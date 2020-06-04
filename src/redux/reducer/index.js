@@ -1,10 +1,17 @@
-import {GET_ALL_VIDEOS_SUCCESS,GET_ICON_CHENNAL_SUCCESS,GET_VIDEO_SUCCESS,GET_VIDEO_INFO_SUCCESS,GET_COMMENT_VIDEO_SUCCESS,GET_SEARCH_VIDEO_SUCCESS} from "../types/types";
+import {
+    GET_ALL_VIDEOS_SUCCESS,
+    GET_ICON_CHENNAL_SUCCESS,
+    GET_VIDEO_SUCCESS,
+    GET_VIDEO_INFO_SUCCESS,
+    GET_COMMENT_VIDEO_SUCCESS,
+    GET_SEARCH_VIDEO_SUCCESS,
+    GET_SEARCH_WORD_SUCCESS
+} from "../types/types";
 
 const initialState={
     todos:[],
     comments:[],
     obj:[],
-    icons:[],
     searchWord:null
 };
 function reducer(state=initialState,action){
@@ -29,16 +36,11 @@ function reducer(state=initialState,action){
                 ...state,
                 obj:action.payload
             }
-        case "GET_SEARCH_WORD_SUCCESS":
+        case GET_SEARCH_WORD_SUCCESS:
             return {
                 ...state,
                 searchWord:action.payload
 
-            }
-        case GET_ICON_CHENNAL_SUCCESS:
-            return{
-                ...state,
-                icons:action.payload
             }
         default:
             return state;

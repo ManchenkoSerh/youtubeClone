@@ -1,5 +1,13 @@
-import {GET_ALL_VIDEOS_SUCCESS,GET_VIDEO_SUCCESS,GET_ICON_CHENNAL_SUCCESS,GET_VIDEO_INFO_SUCCESS,GET_SEARCH_VIDEO_SUCCESS,GET_COMMENT_VIDEO_SUCCESS} from "../types/types";
-const ApiKey="AIzaSyCoocjwAGapwcaNwM3fACUpYt3Cvw-Rr-8"
+import {
+    GET_ALL_VIDEOS_SUCCESS,
+    GET_VIDEO_SUCCESS,
+    GET_ICON_CHENNAL_SUCCESS,
+    GET_VIDEO_INFO_SUCCESS,
+    GET_SEARCH_VIDEO_SUCCESS,
+    GET_COMMENT_VIDEO_SUCCESS,
+    GET_SEARCH_WORD_SUCCESS
+} from "../types/types";
+const ApiKey="AIzaSyCjYk7dS22esR9CGZfQ7rc5qe75W2EqSLU"
 export const getAllDataSuccess=(data)=>({
     type:GET_ALL_VIDEOS_SUCCESS,
     payload:data
@@ -28,7 +36,7 @@ export const getVideo=(idVideo)=>({
  *
  */
 export const keyWord=(word)=>({
-    type:"GET_SEARCH_WORD_SUCCESS",
+    type:GET_SEARCH_WORD_SUCCESS,
     payload:word
 })
 export const getSearchVideoSuccess=(data)=>({
@@ -37,7 +45,7 @@ export const getSearchVideoSuccess=(data)=>({
 })
 
 export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}` , {})
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
     .then((res) => res.json())
     .then((res) => dispatch(getSearchVideoSuccess(res)))
 }

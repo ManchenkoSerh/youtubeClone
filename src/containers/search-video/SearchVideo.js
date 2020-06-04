@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import {getVideoSearch} from "../../redux/action/action";
+import {getVideo, getVideoSearch} from "../../redux/action/action";
 import ListVideoSearch from "../../components/list-video-search/ListVideoSearch";
 
 const mapStateToProps=(state)=>({
@@ -7,6 +7,7 @@ const mapStateToProps=(state)=>({
     searchWord:state.searchWord
 })
 const mapDispatchToProps=(dispatch)=>({
-    getSearchVideo:(query)=>dispatch(getVideoSearch(query))
+    getSearchVideo:(query)=>dispatch(getVideoSearch(query)),
+    getObjVideo:(obj)=>dispatch(getVideo(obj))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(ListVideoSearch);
