@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 export default class ListVideoSearchItem extends Component{
 
     render(){
@@ -9,7 +10,7 @@ export default class ListVideoSearchItem extends Component{
                 id:id,
                 snippet:snippet,
                 statistics:statistics
-            }))
+            }))<Link to={`/player/${id}`}>{snippet.title}</Link>
         }*/
 
         return(

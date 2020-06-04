@@ -1,19 +1,17 @@
 import React, {useEffect} from "react";
 import ListVideoSearchItem from "../list-video-search-item/ListVideoSearchItem";
 
-const query = 'fortnite'
+
 
 const ListVideo=({state=[],getSearchVideo,searchWord})=>{
+
+    async function parseSearchVideo(){
+        await getSearchVideo(searchWord)
+    }
     useEffect(() => {
-        const timer = window.setTimeout(() => {
-            console.log(searchWord)
-            getSearchVideo(searchWord);
-        }, 1000);
-        return () => {
-            // Return callback to run on unmount.
-            window.clearInterval(timer);
-        };
-    }, []);
+        parseSearchVideo(searchWord)
+        console.log('parsec')
+    },[searchWord])
 
 
 console.log(state)
