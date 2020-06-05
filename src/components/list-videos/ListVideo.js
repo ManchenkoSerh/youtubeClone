@@ -3,17 +3,21 @@ import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css"
 
 const ListVideo=({state=[],getList,getObjVideo})=>{
-    useEffect(() => {
-        const timer = window.setTimeout(() => {
-            getList();
-        }, 1000);
-        return () => {
-            // Return callback to run on unmount.
-            window.clearInterval(timer);
-        };
-    }, []);
+    async function parseListVideo() {
+        await getList()
+    }
+
+        useEffect(() => {
+            parseListVideo()
+            console.log('parsec')
+        },[])
 
 
+
+
+    const listenScrollEvent=()=>{
+        console.log('Scroll event detected!');
+    }
     //console.log('state list vide',state);
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
@@ -25,7 +29,9 @@ const ListVideo=({state=[],getList,getObjVideo})=>{
         )
     })
     return(
+        <div onScroll={()=>console.log("ssssss")}>
         <ul className="block-lists">{list}</ul>
+        </div>
     )
 }
 export default ListVideo;

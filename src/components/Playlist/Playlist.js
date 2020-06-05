@@ -14,6 +14,7 @@ const PlayList=({comments=[],getComments,obj})=>{
         console.log('parsec')
     },[obj])
 
+    console.log(obj)
     const commentsAll=comments.map((item)=>{
         const {id,...itemprops}=item;
         return(
@@ -27,7 +28,7 @@ const PlayList=({comments=[],getComments,obj})=>{
             <Grid>
                 <Grid.Column width={12}>
             <div className="block-container__playlist-info">
-            <iframe src={`https://youtube.com/embed/${obj.id}`} height="700px" width="100%"></iframe>
+            <iframe src={`https://youtube.com/embed/${obj.id.videoId}`} height="700px" width="100%"></iframe>
                 <h1>{obj.snippet.title}</h1>
                 <div className="block-container__info-statistics">
             <span>{obj.statistics.viewCount} просмотров</span>

@@ -11,7 +11,7 @@ function HeaderYT({dispatch}) {
     let history = useHistory();
 
     function handleClick() {
-        history.push("/home");
+        history.push("/search");
     }
     return (
         <Grid.Row>
@@ -21,24 +21,21 @@ function HeaderYT({dispatch}) {
           </Grid.Column>
           <Grid.Column  width={10}>
               <form onSubmit={(e)=>{
-                  debugger
                   e.preventDefault();
                   if(!input.value.trim()){
                       return;
                   }
-                  debugger;
+                  handleClick()
                   dispatch(keyWord(input.value))
                   input.value="";
               }}>
               <div className="ui action input">
                   <div className="ui right icon input">
-                  <input ref={(node)=>input=node}   onclick={handleClick} className="search-panel" placeholder="Введите текст"/>
+                  <input ref={(node)=>input=node}    className="search-panel" placeholder="Введите текст"/>
                       <i className="keyboard icon"></i>
                   </div>
-
                   <Button type="submit" className="ui icon button">
                       <Icon name='search'/>
-
                   </Button>
 
               </div>
