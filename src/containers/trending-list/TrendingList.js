@@ -1,5 +1,5 @@
 import {connect} from "react-redux"
-import {getAllData, getVideo} from "../../redux/action/action";
+import {getAllData, getVide} from "../../redux/action/action";
 import { TrendingListVideo } from "../../components/trending-list/TrendingListVideo";
 
 const mapStateToProps=(state)=>({
@@ -7,6 +7,6 @@ const mapStateToProps=(state)=>({
 })
 const mapDispatchToProps=(dispatch)=>({
     getList:()=>dispatch(getAllData()),
-    getObjVideo:(obj)=>dispatch(getVideo(obj))
+    getObjVide:(obj)=>dispatch(getVide(obj))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(TrendingListVideo);

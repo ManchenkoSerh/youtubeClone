@@ -8,7 +8,7 @@ export const TrendingListItem = ({snippet,statistics,id,obj}) => {
         <Grid.Row>
             <img src={snippet.thumbnails.medium.url} alt='VideoImage' />
             <div>
-            <Link to={`/player/${id}`}><div>{snippet.title}</div></Link>
+                <div onClick={obj}><Link to={`/player/${id}`}>{snippet.title}</Link></div>
                 <div>{statistics.viewCount} views</div>
             </div>
         </Grid.Row>
