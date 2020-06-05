@@ -2,7 +2,7 @@ import React,{ useEffect } from 'react'
 import { Grid } from 'semantic-ui-react'
 import { TrendingListItem } from '../trending-list-item/TrendingListItem'
 
-export const TrendingListVideo = ({state=[],getList,getObjVideo}) => {
+export const TrendingListVideo = ({state=[],getList,getObjVide}) => {
     async function parseListVideo() {
         await getList()
     }
@@ -12,7 +12,7 @@ export const TrendingListVideo = ({state=[],getList,getObjVideo}) => {
 
     const list = state.map( (item) => {
         const { id, ...itemprops } = item;
-        return <TrendingListItem key={item.id} id={id} obj={()=>getObjVideo({...item})} {...itemprops} />
+        return <TrendingListItem key={item.id} id={id} obj={()=>getObjVide({...item})} {...itemprops} />
     })
 
     return (
