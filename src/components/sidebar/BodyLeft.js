@@ -12,7 +12,8 @@ const BodyLeft = () => {
           <Link to="/">Главная</Link>
       </Button>
       <Button >
-        <Icon name='fire' /> В тренде
+        <Icon name='fire' /> 
+        <Link to="/trending"> В тренде </Link>
       </Button>
       <Button >
         <Icon name='mail' />Подписки
