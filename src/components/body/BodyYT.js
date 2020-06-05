@@ -1,12 +1,12 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import {Grid} from 'semantic-ui-react'
 import BodyLeft from '../sidebar/BodyLeft'
 import './BodyYT.scss'
 import VideoList from "../../containers/video-list/VideoList";
-import {BrowserRouter,Switch,Route} from "react-router-dom";
-import PlayList from "../Playlist/Playlist";
+import {Switch,Route} from "react-router-dom";
 import SearchVideo from '../../containers/search-video/SearchVideo';
 import PlayVideo from "../../containers/play-video/PlayVideo";
+import TrendingList from '../../containers/trending-list/TrendingList';
 
 function BodyYT() {
     return (
@@ -19,6 +19,7 @@ function BodyYT() {
             <Route path="/" exact component={VideoList}/>
             <Route path="/player" component={PlayVideo}/>
             <Route path="/search" component={SearchVideo}/>
+            <Route path="/trending" component={TrendingList}/>
           </Switch>
         </Grid.Column>
       </Grid.Row>

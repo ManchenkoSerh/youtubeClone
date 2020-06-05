@@ -10,7 +10,7 @@ const ListVideo=({state=[],getList,getObjVideo})=>{
         useEffect(() => {
             parseListVideo()
             console.log('parsec')
-        },[])
+        }, [])
 
 
 
