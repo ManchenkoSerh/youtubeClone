@@ -10,8 +10,10 @@ import {
 
 const initialState={
     todos:[],
+    searchVideos:[],
     comments:[],
     obj:[],
+    obj2:[],
     searchWord:null
 };
 function reducer(state=initialState,action){
@@ -24,7 +26,7 @@ function reducer(state=initialState,action){
         case GET_SEARCH_VIDEO_SUCCESS:
             return{
                 ...state,
-                todos:action.payload
+                searchVideos:action.payload
             }
         case GET_COMMENT_VIDEO_SUCCESS:
             return{
@@ -36,6 +38,15 @@ function reducer(state=initialState,action){
                 ...state,
                 obj:action.payload
             }
+
+        case GET_VIDEO_SUCCESS:
+            return{
+                ...state,
+                obj2:action.payload
+            }
+
+
+
         case GET_SEARCH_WORD_SUCCESS:
             return {
                 ...state,

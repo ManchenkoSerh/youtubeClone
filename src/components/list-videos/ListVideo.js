@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css"
 
-const ListVideo=({state=[],getList,getObjVideo})=>{
+const ListVideo=({state=[],getList,getObjVide})=>{
     async function parseListVideo() {
         await getList()
     }
@@ -24,7 +24,7 @@ const ListVideo=({state=[],getList,getObjVideo})=>{
         //console.log(item);
         return(
             <li key={id} className="block-container">
-                <ListVideoItem id={id} obj={()=>getObjVideo({...item})} {...itemprops}/>
+                <ListVideoItem id={id} obj={()=>getObjVide({...item})} {...itemprops}/>
             </li>
         )
     })
