@@ -18,18 +18,24 @@ export const getAllData=()=>(dispatch)=>{
         .then((res)=> res.json())
         .then(res=>dispatch(getAllDataSuccess(res)))
 }
-export const getVideoSuccess=(data)=>({
-    type:GET_VIDEO_SUCCESS,
+export const getVide=(data)=>({
+    type:GET_VIDEO_INFO_SUCCESS,
     payload:data
 })
 // export const getVideo=(idVideo)=>(dispatch)=>{
 //     fetch(`https://www.youtube.com/watch?v=${idVideo}`)
 //         .then()
 // }
-export const getVideo=(idVideo)=>({
-    type:GET_VIDEO_INFO_SUCCESS,
+export const getVideoSuccess=(idVideo)=>({
+    type:GET_VIDEO_SUCCESS,
         payload:idVideo
 })
+export const getVideo=(idVideo)=>(dispatch)=>{
+    debugger
+    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
+        .then(res=>{debugger;res.json()})
+        .then(res=>dispatch(getVideoSuccess(res)))
+}
 
 /**
  * Youtube Search Video API

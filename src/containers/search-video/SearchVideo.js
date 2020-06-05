@@ -3,7 +3,7 @@ import {getVideo, getVideoSearch} from "../../redux/action/action";
 import ListVideoSearch from "../../components/list-video-search/ListVideoSearch";
 
 const mapStateToProps=(state)=>({
-    state:state.todos.items,
+    state:state.searchVideos.items,
     searchWord:state.searchWord
 })
 const mapDispatchToProps=(dispatch)=>({

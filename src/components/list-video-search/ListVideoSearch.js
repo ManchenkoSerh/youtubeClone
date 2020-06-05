@@ -20,7 +20,7 @@ console.log(state)
         const { id, ...itemprops } = item;
         return(
             <li key={id} className="block-container">
-                <ListVideoSearchItem id={id+1} obj={()=>getObjVideo({...item})} {...itemprops}/>
+                <ListVideoSearchItem id={id+1} obj2={()=>getObjVideo({...item})} {...itemprops}/>
             </li>
         )
     })
