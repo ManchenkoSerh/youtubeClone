@@ -14,4 +14,4 @@ const ListVideoSearchItem=({id,snippet,obj2,statistics})=>{
         )
 
     }
-    export default ListVideoSearchItem
+export default ListVideoSearchItem

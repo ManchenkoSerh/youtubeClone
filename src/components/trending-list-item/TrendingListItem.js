@@ -6,10 +6,11 @@ import './TrendingListItem.css'
 export const TrendingListItem = ({snippet,statistics,id,obj}) => {
     return (
         <Grid.Row>
-            <img src={snippet.thumbnails.medium.url} alt='VideoImage' />
+            <img onClick={obj} src={snippet.thumbnails.medium.url} alt='VideoImage'/>
             <div>
                 <div onClick={obj}><Link to={`/player/${id}`}>{snippet.title}</Link></div>
-                <div>{statistics.viewCount} views</div>
+                <span>{snippet.channelTitle}</span>
+                <p>{statistics.viewCount} просмотров</p>
             </div>
         </Grid.Row>
     )

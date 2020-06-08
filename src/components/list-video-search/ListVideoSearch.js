@@ -4,14 +4,24 @@ import ListVideoItem from "../list-videos-item/ListVideoItem";
 
 
 
-const ListVideoSearch=({state=[],getSearchVideo,getObjVideo,searchWord})=>{
+const ListVideoSearch=({state=[],getSearchVideo,getObjVideo,searchWord,addSearchVideos})=>{
 
     async function parseSearchVideo(){
         await getSearchVideo(searchWord)
     }
+    async function parseaddVideo() {
+        await addSearchVideos(searchWord)
+    }
     useEffect(() => {
         parseSearchVideo(searchWord)
         console.log('parsec')
+        window.addEventListener("scroll",()=>{
+            const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
+            const scrolled=window.scrollY;
+            if(Math.ceil(scrolled)===scrolltable){
+                parseaddVideo(searchWord)
+            }
+        })
     },[searchWord])
 
 

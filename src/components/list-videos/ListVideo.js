@@ -2,23 +2,31 @@ import React, {useEffect} from "react";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css"
 
-const ListVideo=({state=[],getList,getObjVide})=>{
+const ListVideo=({state=[],getList,getObjVide,addVideos,token})=>{
     async function parseListVideo() {
         await getList()
     }
+    async function parseaddVideo() {
+        await addVideos(token)
+    }
+    // async function parseAddListVideo() {
+    //     await addVideos()
+    // }
 
         useEffect(() => {
             parseListVideo()
             console.log('parsec')
+            window.addEventListener("scroll",()=>{
+                const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
+                const scrolled=window.scrollY;
+                if(Math.ceil(scrolled)===scrolltable){
+                    console.log(token)
+                    parseaddVideo(token)
+                }
+            })
         }, [])
 
-
-
-
-    const listenScrollEvent=()=>{
-        console.log('Scroll event detected!');
-    }
-    //console.log('state list vide',state);
+console.log(state)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
         //console.log(item);
@@ -29,7 +37,7 @@ const ListVideo=({state=[],getList,getObjVide})=>{
         )
     })
     return(
-        <div onScroll={()=>console.log("ssssss")}>
+        <div >
         <ul className="block-lists">{list}</ul>
         </div>
     )
