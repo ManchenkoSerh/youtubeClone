@@ -10,8 +10,6 @@ import {
     URL
 } from "../types/types";
 
-const ApiKey="AIzaSyB0-zxYRTVmPCkuX3dGHUYr-tUIuJbsicc"
-
 export const getAllDataSuccess=(data)=>({
     type:GET_ALL_VIDEOS_SUCCESS,
     payload:data
