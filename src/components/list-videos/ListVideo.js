@@ -14,19 +14,22 @@ const ListVideo=({state=[],getList,getObjVide,addVideos,token})=>{
     // }
 
         useEffect(() => {
-            parseListVideo()
+
+            // else{parseListVideo()}
+parseListVideo();
             console.log('parsec')
             window.addEventListener("scroll",()=>{
                 const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
                 const scrolled=window.scrollY;
+
+                //parseListVideo(token);
                 if(Math.ceil(scrolled)===scrolltable){
-                    console.log(token)
-                    parseaddVideo(token)
+                    parseaddVideo(token);
                 }
             })
         }, [])
 
-console.log(state)
+console.log(token)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
         //console.log(item);

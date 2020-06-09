@@ -16,7 +16,7 @@ export const getAllDataSuccess=(data)=>({
 })
 export const getAllData=()=>(dispatch)=>{
 
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=2&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
         })
         .then((res)=>res.json())
         .then(res=>{console.log(res);
@@ -34,10 +34,9 @@ export const getVideoSuccess=(idVideo)=>({
         payload:idVideo
 })
 export const getVideo=(idVideo)=>(dispatch)=>{
-    debugger
     fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
-        .then(res=>{debugger;res.json()})
-        .then(res=>dispatch(getVideoSuccess(res)))
+        .then(res=>res.json())
+        .then(res=>{dispatch(getVideoSuccess(res))})
 }
 
 /**
@@ -83,9 +82,9 @@ export const addVideos=(nextToken)=>(dispatch)=>{
     fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`)
     .then(res=>res.json())
     .then(res=>{
-        console.log(res);
-        dispatch(SaveToken(res.nextPageToken))
-        dispatch(addVideosSuccess(res.items))
+        console.log(res);debugger;dispatch(SaveToken(res.nextPageToken));
+        dispatch(addVideosSuccess(res.items));
+
     })
 }
 
@@ -94,7 +93,7 @@ export const addSearchSuccess=(data)=>({
     payload:data
 })
 export const addSearchVideos=(query)=>(dispatch)=>{
-    fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
+    fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
         .then(res=>res.json())
         .then(res=>dispatch(addSearchSuccess(res.items)))
 }

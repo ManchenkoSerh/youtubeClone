@@ -22,7 +22,9 @@ function reducer(state=initialState,action){
         case GET_ALL_VIDEOS_SUCCESS:
             return {
                 ...state,
-                todos:action.payload
+                todos:action.payload,
+
+
             }
 
         case GET_SEARCH_VIDEO_SUCCESS:
@@ -68,6 +70,7 @@ function reducer(state=initialState,action){
                     ...action.payload
 
                 ]
+
             }
         case "ADD_VIDEO_SEARCH_SUCCESS":
             return{
