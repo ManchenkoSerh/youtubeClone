@@ -7,20 +7,32 @@ import {
     GET_COMMENT_VIDEO_SUCCESS,
     GET_SEARCH_WORD_SUCCESS,
     ApiKey,
-    URL
+    URL,
+    REQUEST_POSTS
 } from "../types/types";
 
 export const getAllDataSuccess=(data)=>({
     type:GET_ALL_VIDEOS_SUCCESS,
     payload:data
 })
-export const getAllData=()=>(dispatch)=>{
+///**********************************************************
 
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=2&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
+export function fetchPosts() {
+    return {
+        type: REQUEST_POSTS
+    }
+}
+
+    ////////****************************
+
+export const getAllData=(token)=>(dispatch)=>{
+
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&pageToken=${token}&regionCode=US&key=${ApiKey}`, {
         })
         .then((res)=>res.json())
         .then(res=>{console.log(res);
-            dispatch(SaveToken(res.nextPageToken));
+        debugger
+            //dispatch(SaveToken(res.nextPageToken));
             dispatch(getAllDataSuccess(res.items))
         })
 }
@@ -79,10 +91,10 @@ export const SaveToken=(data)=>({
 })
 export const addVideos=(nextToken)=>(dispatch)=>{
 
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`)
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`)
     .then(res=>res.json())
     .then(res=>{
-        console.log(res);debugger;dispatch(SaveToken(res.nextPageToken));
+        console.log(res);dispatch(SaveToken(res.nextPageToken));
         dispatch(addVideosSuccess(res.items));
 
     })

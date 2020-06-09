@@ -9,6 +9,7 @@ import {
 
 const initialState={
     todos:[],
+    addTodos:[],
     searchVideos:[],
     comments:[],
     obj:[],
@@ -21,7 +22,7 @@ function reducer(state=initialState,action){
         case GET_ALL_VIDEOS_SUCCESS:
             return {
                 ...state,
-                todos:action.payload,
+                todos:action.payload
 
 
             }
@@ -64,11 +65,9 @@ function reducer(state=initialState,action){
         case "ADD_VIDEO_SUCCESS":
             return {
                 ...state,
-                todos: [
-                    ...state.todos,
-                    ...action.payload
+                    todos:[...state.todos,...action.payload]
 
-                ]
+
 
             }
         case "ADD_VIDEO_SEARCH_SUCCESS":
