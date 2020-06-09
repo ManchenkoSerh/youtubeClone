@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import ListVideoSearchItem from "../list-video-search-item/ListVideoSearchItem";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 
-const ListVideoSearch=({state=[],getSearchVideo,getObjVideo,searchWord,addSearchVideos})=>{
+const ListVideoSearch=({state=[],getSearchVideo,getObjVide,searchWord,addSearchVideos})=>{
 
     async function parseSearchVideo(){
         await getSearchVideo(searchWord)
