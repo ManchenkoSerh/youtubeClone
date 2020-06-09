@@ -5,6 +5,9 @@ import VideoList from "../../containers/video-list/VideoList"
 import CommentsItem from "../comments-item/CommentsItem"
 
 const PlayList=({comments=[],getComments,getVideo,obj,obj2})=>{
+    if (typeof obj.id == 'object') {
+        obj.id = obj.id.videoId
+    }
 
     async function parseComments() {
         await getComments(obj.id)
@@ -32,13 +35,13 @@ const PlayList=({comments=[],getComments,getVideo,obj,obj2})=>{
             <div className="block-container__playlist-info">
             <iframe src={`https://youtube.com/embed/${obj.id}`} height="700px" width="100%"></iframe>
                 <h1>{obj.snippet.title}</h1>
-                <div className="block-container__info-statistics">
-            <span>{obj.statistics.viewCount} просмотров</span>
-                    <Icon className="thumbs up outline"/>
-            <span>{obj.statistics.likeCount}</span>
-                    <Icon className="thumbs down outline"/>
-            <span>{obj.statistics.dislikeCount}</span>
-                </div><br/>
+            {/*    <div className="block-container__info-statistics">*/}
+            {/*<span>{obj.statistics.viewCount} просмотров</span>*/}
+            {/*        <Icon className="thumbs up outline"/>*/}
+            {/*<span>{obj.statistics.likeCount}</span>*/}
+            {/*        <Icon className="thumbs down outline"/>*/}
+            {/*<span>{obj.statistics.dislikeCount}</span>*/}
+            {/*    </div><br/>*/}
             <p1>{obj.snippet.description}</p1>
                 <div className="block-container__comments"><ul>{commentsAll}</ul></div>
             </div>

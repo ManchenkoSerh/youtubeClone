@@ -8,7 +8,7 @@ const mapStateToProps=(state)=>({
 })
 const mapDispatchToProps=(dispatch)=>({
     getSearchVideo:(query)=>dispatch(getVideoSearch(query)),
-    getObjVideo:(obj)=>dispatch(getVide(obj)),
+    getObjVide:(obj)=>dispatch(getVide(obj)),
     addSearchVideos:(word)=>dispatch(addSearchVideos(word))
 })
 export default connect(mapStateToProps,mapDispatchToProps)(ListVideoSearch);

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cloneYoutube.iml" filepath="$PROJECT_DIR$/.idea/cloneYoutube.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/youtubeClone.iml" filepath="$PROJECT_DIR$/.idea/youtubeClone.iml" />
     </modules>
   </component>
 </project>

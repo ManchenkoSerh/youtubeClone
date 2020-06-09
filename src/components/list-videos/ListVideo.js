@@ -32,7 +32,7 @@ parseListVideo();
 console.log(token)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
-        //console.log(item);
+        //console.log('needed item info', item);
         return(
             <li key={id} className="block-container">
                 <ListVideoItem id={id} obj={()=>getObjVide({...item})} {...itemprops}/>
