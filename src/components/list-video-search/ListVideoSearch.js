@@ -4,26 +4,34 @@ import ListVideoItem from "../list-videos-item/ListVideoItem";
 
 
 
-const ListVideoSearch=({state=[],getSearchVideo,getObjVideo,searchWord})=>{
+const ListVideoSearch=({state=[],getSearchVideo,getObjVide,searchWord})=>{
 
     async function parseSearchVideo(){
         await getSearchVideo(searchWord)
     }
     useEffect(() => {
         parseSearchVideo(searchWord)
-        console.log('parsec')
     },[searchWord])
 
 
-console.log(state)
-    const list=state.map((item)=>{
+console.log('thisstate', state, searchWord)
+    /*const list=state.map((item)=>{
         const { id, ...itemprops } = item;
         return(
             <li key={id} className="block-container">
                 <ListVideoSearchItem id={id+1} obj2={()=>getObjVideo({...item})} {...itemprops}/>
             </li>
         )
+    })*/
+    const list  = state.map( (item) => {
+        const id = item.id.videoId
+        return (
+            <li key={item.id.videoId} className="block-container">
+                <ListVideoSearchItem id={item.id.videoId} obj={ () => getObjVide({id, ...item})} {...item}/>
+            </li>
+        )
     })
+
     return(
         <ul className="block-lists">{list}</ul>
     )
