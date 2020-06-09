@@ -14,4 +14,4 @@ console.log('test', obj)
         )
 
     }
-    export default ListVideoSearchItem
+export default ListVideoSearchItem

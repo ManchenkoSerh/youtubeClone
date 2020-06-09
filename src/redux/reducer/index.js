@@ -13,15 +13,19 @@ const initialState={
     comments:[],
     obj:[],
     obj2:[],
-    searchWord:null
+    searchWord:"",
+    token:""
 };
 function reducer(state=initialState,action){
     switch (action.type) {
         case GET_ALL_VIDEOS_SUCCESS:
-            return{
+            return {
                 ...state,
-                todos:action.payload
+                todos:action.payload,
+
+
             }
+
         case GET_SEARCH_VIDEO_SUCCESS:
             return{
                 ...state,
@@ -37,7 +41,12 @@ function reducer(state=initialState,action){
                 ...state,
                 obj:action.payload
             }
+        case  "SAVE_TOKEN_SUCCESS":
+            return {
+                ...state,
+                token: action.payload
 
+            }
         case GET_VIDEO_SUCCESS:
             return{
                 ...state,
@@ -51,6 +60,25 @@ function reducer(state=initialState,action){
                 ...state,
                 searchWord:action.payload
 
+            }
+        case "ADD_VIDEO_SUCCESS":
+            return {
+                ...state,
+                todos: [
+                    ...state.todos,
+                    ...action.payload
+
+                ]
+
+            }
+        case "ADD_VIDEO_SEARCH_SUCCESS":
+            return{
+                ...state,
+                searchVideos:[
+                    ...state.searchVideos,
+                    ...action.payload
+
+                ]
             }
         default:
             return state;

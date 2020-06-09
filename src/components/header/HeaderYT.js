@@ -13,6 +13,15 @@ function HeaderYT({dispatch}) {
     function handleClick() {
         history.push("/search");
     }
+    function handlerSubmit(e) {
+        e.preventDefault();
+        if(!input.value.trim()){
+            return;
+        }
+        handleClick()
+        dispatch(keyWord(input.value))
+
+    }
     return (
         <Grid.Row>
           <Grid.Column  width={3}>
@@ -20,15 +29,7 @@ function HeaderYT({dispatch}) {
               <Icon className="large youtube sign"/>
           </Grid.Column>
           <Grid.Column  width={10}>
-              <form onSubmit={(e)=>{
-                  e.preventDefault();
-                  if(!input.value.trim()){
-                      return;
-                  }
-                  handleClick()
-                  dispatch(keyWord(input.value))
-                  input.value="";
-              }}>
+              <form onSubmit={handlerSubmit}>
               <div className="ui action input">
                   <div className="ui right icon input">
                   <input ref={(node)=>input=node}    className="search-panel" placeholder="Введите текст"/>

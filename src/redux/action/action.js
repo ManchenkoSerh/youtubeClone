@@ -5,36 +5,40 @@ import {
     GET_VIDEO_INFO_SUCCESS,
     GET_SEARCH_VIDEO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
-    GET_SEARCH_WORD_SUCCESS
+    GET_SEARCH_WORD_SUCCESS,
+    ApiKey,
+    URL
 } from "../types/types";
+
 const ApiKey="AIzaSyB0-zxYRTVmPCkuX3dGHUYr-tUIuJbsicc"
+
 export const getAllDataSuccess=(data)=>({
     type:GET_ALL_VIDEOS_SUCCESS,
     payload:data
 })
 export const getAllData=()=>(dispatch)=>{
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
+
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=2&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
         })
-        .then((res)=> res.json())
-        .then(res=>dispatch(getAllDataSuccess(res)))
+        .then((res)=>res.json())
+        .then(res=>{console.log(res);
+            dispatch(SaveToken(res.nextPageToken));
+            dispatch(getAllDataSuccess(res.items))
+        })
 }
 export const getVide=(data)=>({
     type:GET_VIDEO_INFO_SUCCESS,
     payload:data
 })
-// export const getVideo=(idVideo)=>(dispatch)=>{
-//     fetch(`https://www.youtube.com/watch?v=${idVideo}`)
-//         .then()
-// }
+
 export const getVideoSuccess=(idVideo)=>({
     type:GET_VIDEO_SUCCESS,
         payload:idVideo
 })
 export const getVideo=(idVideo)=>(dispatch)=>{
-    debugger
-    fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
-        .then(res=>{debugger;res.json()})
-        .then(res=>dispatch(getVideoSuccess(res)))
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
+        .then(res=>res.json())
+        .then(res=>{dispatch(getVideoSuccess(res))})
 }
 
 /**
@@ -51,17 +55,47 @@ export const getSearchVideoSuccess=(data)=>({
 })
 
 export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&type=video&key=${ApiKey}`)
+    fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
     .then((res) => res.json())
-    .then((res) => dispatch(getSearchVideoSuccess(res)))
+    .then((res) => dispatch(getSearchVideoSuccess(res.items)))
 }
 export const getCommentsSuccess=(data)=>({
     type:GET_COMMENT_VIDEO_SUCCESS,
     payload:data
 })
 export const getComments=(idChennal)=>(dispatch)=>{
-    fetch(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=${ApiKey}`)
+    fetch(`${URL}/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=${ApiKey}`)
         .then(res=>res.json())
         .then((res) => dispatch(getCommentsSuccess(res)))
 }
 
+
+
+export const addVideosSuccess=(data)=>({
+    type:"ADD_VIDEO_SUCCESS",
+    payload:data
+})
+export const SaveToken=(data)=>({
+    type:"SAVE_TOKEN_SUCCESS",
+    payload:data
+})
+export const addVideos=(nextToken)=>(dispatch)=>{
+
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=20&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`)
+    .then(res=>res.json())
+    .then(res=>{
+        console.log(res);debugger;dispatch(SaveToken(res.nextPageToken));
+        dispatch(addVideosSuccess(res.items));
+
+    })
+}
+
+export const addSearchSuccess=(data)=>({
+    type:"ADD_VIDEO_SEARCH_SUCCESS",
+    payload:data
+})
+export const addSearchVideos=(query)=>(dispatch)=>{
+    fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
+        .then(res=>res.json())
+        .then(res=>dispatch(addSearchSuccess(res.items)))
+}
