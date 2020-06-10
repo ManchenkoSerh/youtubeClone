@@ -1,17 +1,20 @@
-import React, {Component} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
-const ListVideoSearchItem=({id,snippet,obj, channelId})=>{
-console.log('test', obj)
-        return(
-            <div className="container-item">
-                <img className="container-item__img" src={snippet.thumbnails.default.url} />
-                <div className="container-item__info">
-                    <p onClick={obj}><Link to={`/player/${id.videoId}`}>{snippet.title}</Link></p>
-                    <p>{snippet.channelTitle}</p>
-                    <p>{/*statistics.viewCount*/} просмотров</p>
-                </div>
-            </div>
-        )
+const ListVideoSearchItem=(props)=>{
+    console.log('hehe',props.id.videoId)
 
+    async function getVideoInfo() {
+        await props.videoIdHandler(props.id.videoId)
     }
+
+    return(
+        <div className="container-item" >
+            <img className="container-item__img" src={props.snippet.thumbnails.default.url} />
+            <div className="container-item__info">
+                <p onClick={getVideoInfo}><Link to={`/player/${props.id.videoId}`}>{props.snippet.title}</Link></p>
+                <p>{props.snippet.channelTitle}</p>
+            </div>
+        </div>
+    )
+}
 export default ListVideoSearchItem

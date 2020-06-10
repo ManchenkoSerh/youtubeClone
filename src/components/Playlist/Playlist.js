@@ -1,49 +1,38 @@
 import React, {useEffect} from "react";
 import "./Playlist.css"
-import {Icon, Grid} from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import VideoList from "../../containers/video-list/VideoList"
 import CommentsItem from "../comments-item/CommentsItem"
 
-const PlayList=({comments=[],getComments,getVideo,obj,obj2})=>{
-    if (typeof obj.id == 'object') {
-        obj.id = obj.id.videoId
-    }
+const PlayList = (props) => {
+    console.log(props)
+    // async function parseComments() {
+    //     await props.getComments(props.aboutVideo.id)
+    // }
 
-    async function parseComments() {
-        await getComments(obj.id)
+    // useEffect(() => {
+    //     parseComments()
+    // },[])
 
-    }
-
-    useEffect(() => {
-        parseComments(obj.id)
-        console.log('parsec')
-    },[obj])
-
-    console.log(obj2)
-    const commentsAll=comments.map((item)=>{
-        const {id,...itemprops}=item;
-        return(
-            <li key={id}>
-                <CommentsItem {...itemprops} /*getIcon={()=>getIconChennal(snippet.topLevelComment.authorChannelId.value)}*//>
-            </li>
-        )
-    })
+    //const commentsAll=props.comments.map((item)=>{
+        //console.log(item)
+        // return(
+        //     <li key={id}>
+        //         <CommentsItem {...itemprops} /*getIcon={()=>getIconChennal(snippet.topLevelComment.authorChannelId.value)}*//>
+        //     </li>
+        // )
+    //})
 
     return(
             <Grid>
                 <Grid.Column width={12}>
             <div className="block-container__playlist-info">
-            <iframe src={`https://youtube.com/embed/${obj.id}`} height="700px" width="100%"></iframe>
-                <h1>{obj.snippet.title}</h1>
-            {/*    <div className="block-container__info-statistics">*/}
-            {/*<span>{obj.statistics.viewCount} просмотров</span>*/}
-            {/*        <Icon className="thumbs up outline"/>*/}
-            {/*<span>{obj.statistics.likeCount}</span>*/}
-            {/*        <Icon className="thumbs down outline"/>*/}
-            {/*<span>{obj.statistics.dislikeCount}</span>*/}
-            {/*    </div><br/>*/}
-            <p1>{obj.snippet.description}</p1>
-                <div className="block-container__comments"><ul>{commentsAll}</ul></div>
+            <iframe src={`https://youtube.com/embed/${props.aboutVideo.id}`}
+                    height="700px"
+                    width="100%"
+                    title={props.aboutVideo.id} />
+                <h1>{props.snippet.title}</h1>
+                {/*<div className="block-container__comments"><ul>{commentsAll}</ul></div>*/}
             </div>
             </Grid.Column>
             <Grid.Column width={2}>

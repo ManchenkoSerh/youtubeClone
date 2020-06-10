@@ -4,7 +4,8 @@ import {
     GET_VIDEO_INFO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
     GET_SEARCH_VIDEO_SUCCESS,
-    GET_SEARCH_WORD_SUCCESS
+    GET_SEARCH_WORD_SUCCESS,
+    GET_VIDEO_ID
 } from "../types/types";
 
 const initialState={
@@ -14,18 +15,21 @@ const initialState={
     obj:[],
     obj2:[],
     searchWord:"",
-    token:""
+    token:"",
+    aboutVideo:"",
 };
 function reducer(state=initialState,action){
     switch (action.type) {
+        case GET_VIDEO_ID:
+            return {
+                ...state,
+                aboutVideo: action.payload
+            }
         case GET_ALL_VIDEOS_SUCCESS:
             return {
                 ...state,
                 todos:action.payload,
-
-
             }
-
         case GET_SEARCH_VIDEO_SUCCESS:
             return{
                 ...state,
@@ -45,21 +49,16 @@ function reducer(state=initialState,action){
             return {
                 ...state,
                 token: action.payload
-
             }
         case GET_VIDEO_SUCCESS:
             return{
                 ...state,
                 obj2:action.payload
             }
-
-
-
         case GET_SEARCH_WORD_SUCCESS:
             return {
                 ...state,
                 searchWord:action.payload
-
             }
         case "ADD_VIDEO_SUCCESS":
             return {
@@ -67,9 +66,7 @@ function reducer(state=initialState,action){
                 todos: [
                     ...state.todos,
                     ...action.payload
-
                 ]
-
             }
         case "ADD_VIDEO_SEARCH_SUCCESS":
             return{
@@ -77,12 +74,10 @@ function reducer(state=initialState,action){
                 searchVideos:[
                     ...state.searchVideos,
                     ...action.payload
-
                 ]
             }
         default:
             return state;
     }
-
 }
 export default  reducer;

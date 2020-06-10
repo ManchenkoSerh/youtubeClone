@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux"
-import HeaderYT from "../../components/header/HeaderYT"
+import HeaderYT from "../../components/header/Header"
 import {getVideoSearch} from "../../redux/action/action";
 
 const mapDispatchToProps=(dispatch)=>({

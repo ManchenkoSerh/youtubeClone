@@ -22,7 +22,6 @@ export const TrendingListVideo = ({state=[],getList,getObjVide,addVideos}) => {
 
     const list = state.map( (item) => {
         const { id, ...itemprops } = item;
-        console.log(item)
         return <TrendingListItem key={item.id} id={id} obj={()=>getObjVide({...item})} {...itemprops} />
     })
 

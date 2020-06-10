@@ -6,6 +6,7 @@ import {
     GET_SEARCH_VIDEO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
     GET_SEARCH_WORD_SUCCESS,
+    GET_VIDEO_ID,
     ApiKey,
     URL
 } from "../types/types";
@@ -15,8 +16,7 @@ export const getAllDataSuccess=(data)=>({
     payload:data
 })
 export const getAllData=()=>(dispatch)=>{
-
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=2&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=5&chart=mostPopular&regionCode=US&key=${ApiKey}`, {
         })
         .then((res)=>res.json())
         .then(res=>{console.log(res);
@@ -53,7 +53,7 @@ export const getSearchVideoSuccess=(data)=>({
 })
 
 export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
+    fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&type=video&key=${ApiKey}`)
     .then((res) => res.json())
     .then((res) => dispatch(getSearchVideoSuccess(res.items)))
 }
@@ -96,4 +96,14 @@ export const addSearchVideos=(query)=>(dispatch)=>{
     fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
         .then(res=>res.json())
         .then(res=>dispatch(addSearchSuccess(res.items)))
+}
+
+export const addVideoID = (data) => ({
+    type: GET_VIDEO_ID,
+    payload: data
+})
+export const addVideoIdInfo = (id) => (dispatch) => {
+    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${ApiKey}`)
+        .then(res=>res.json())
+        .then(res=>dispatch(addVideoID(res.items)))
 }

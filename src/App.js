@@ -1,8 +1,8 @@
 import React from 'react';
 import 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react';
-import HeaderYT from './components/header/HeaderYT';
-import BodyYT from './components/body/BodyYT';
+import HeaderYT from './components/header/Header';
+import Main from './pages/mainPage/Main';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div >
       <Grid padded >
         <HeaderYT/>
-        <BodyYT/>
+        <Main/>
       </Grid>
     </div>
     </BrowserRouter>

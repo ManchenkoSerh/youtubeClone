@@ -17,7 +17,6 @@ const ListVideo=({state=[],getList,getObjVide,addVideos,token})=>{
 
             // else{parseListVideo()}
 parseListVideo();
-            console.log('parsec')
             window.addEventListener("scroll",()=>{
                 const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
                 const scrolled=window.scrollY;
@@ -29,7 +28,6 @@ parseListVideo();
             })
         }, [])
 
-console.log(token)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
         //console.log('needed item info', item);
