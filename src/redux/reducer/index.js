@@ -1,14 +1,14 @@
 import {
-    GET_ALL_VIDEOS_SUCCESS,
-    GET_VIDEO_SUCCESS,
-    GET_VIDEO_INFO_SUCCESS,
+
+    FETCH_VIDEO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
     GET_SEARCH_VIDEO_SUCCESS,
-    GET_SEARCH_WORD_SUCCESS
+    GET_SEARCH_WORD_SUCCESS, FETCH_ALL_DATA_SUCCESS, GET_VIDEO_INFO_SUCCESS,FETCH_SEARCH_VIDEO_SUCCESS
 } from "../types/types";
 
 const initialState={
     todos:[],
+    addTodos:[],
     searchVideos:[],
     comments:[],
     obj:[],
@@ -18,15 +18,14 @@ const initialState={
 };
 function reducer(state=initialState,action){
     switch (action.type) {
-        case GET_ALL_VIDEOS_SUCCESS:
+        case FETCH_ALL_DATA_SUCCESS:
             return {
                 ...state,
-                todos:action.payload,
+                todos:action.payload
 
 
             }
-
-        case GET_SEARCH_VIDEO_SUCCESS:
+        case FETCH_SEARCH_VIDEO_SUCCESS:
             return{
                 ...state,
                 searchVideos:action.payload
@@ -47,7 +46,7 @@ function reducer(state=initialState,action){
                 token: action.payload
 
             }
-        case GET_VIDEO_SUCCESS:
+        case FETCH_VIDEO_SUCCESS:
             return{
                 ...state,
                 obj2:action.payload
@@ -64,11 +63,9 @@ function reducer(state=initialState,action){
         case "ADD_VIDEO_SUCCESS":
             return {
                 ...state,
-                todos: [
-                    ...state.todos,
-                    ...action.payload
+                    todos:[...state.todos,...action.payload]
 
-                ]
+
 
             }
         case "ADD_VIDEO_SEARCH_SUCCESS":

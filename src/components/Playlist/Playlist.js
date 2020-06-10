@@ -20,6 +20,7 @@ const PlayList=({comments=[],getComments,getVideo,obj,obj2})=>{
     },[obj])
 
     console.log(obj2)
+    console.log(comments)
     const commentsAll=comments.map((item)=>{
         const {id,...itemprops}=item;
         return(

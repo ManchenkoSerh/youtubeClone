@@ -19,13 +19,38 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6255ca64-ac26-45c4-b393-aafc83af120b" name="Default Changelist" comment="">
+    <list default="true" id="02a0ff9c-a71a-457b-ae07-e1dc32ba2618" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/input-search/InputSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/input-search/InputSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/saga/taskSage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/taskSage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.js" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,6 +62,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1d20ZnR9FJ1sHx7DR05lKnlEo7i" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ReduxLearn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -63,29 +89,46 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Senko\Documents\Senko\youtubeClone\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="configurable.stylesheets.stylelint" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6255ca64-ac26-45c4-b393-aafc83af120b" name="Default Changelist" comment="" />
+      <changelist id="02a0ff9c-a71a-457b-ae07-e1dc32ba2618" name="Default Changelist" comment="" />
       <created>1591607941056</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591607941056</updated>
       <workItem from="1591607965859" duration="7514000" />
+      <workItem from="1591702998218" duration="7081000" />
+      <workItem from="1591727822809" duration="9517000" />
+      <workItem from="1591773988010" duration="5267000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

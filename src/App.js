@@ -6,7 +6,6 @@ import BodyYT from './components/body/BodyYT';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
-
   return (
     <BrowserRouter>
     <div >

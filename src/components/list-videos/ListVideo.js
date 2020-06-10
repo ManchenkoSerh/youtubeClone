@@ -2,40 +2,40 @@ import React, {useEffect} from "react";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css"
 
-const ListVideo=({state=[],getList,getObjVide,addVideos,token})=>{
+const ListVideo=({state=[],fetchPosts,getObjVideo,addVideos,token})=>{
     async function parseListVideo() {
-        await getList()
+        await fetchPosts()
     }
-    async function parseaddVideo() {
-        await addVideos(token)
-    }
+    // async function parseaddVideo() {
+    //     await addVideos(token)
+    // }
     // async function parseAddListVideo() {
     //     await addVideos()
     // }
 
         useEffect(() => {
-
             // else{parseListVideo()}
 parseListVideo();
-            console.log('parsec')
-            window.addEventListener("scroll",()=>{
-                const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
-                const scrolled=window.scrollY;
 
-                //parseListVideo(token);
-                if(Math.ceil(scrolled)===scrolltable){
-                    parseaddVideo(token);
-                }
-            })
+            // console.log('parsec')
+            // window.addEventListener("scroll",()=>{
+            //     const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
+            //     const scrolled=window.scrollY;
+            //
+            //     //parseListVideo(token);
+            //     if(Math.ceil(scrolled)===scrolltable){
+            //         parseaddVideo(token);
+            //     }
+            // })
         }, [])
 
-console.log(token)
+console.log(state)
     const list=state.map((item)=>{
         const { id, ...itemprops } = item;
         //console.log('needed item info', item);
         return(
             <li key={id} className="block-container">
-                <ListVideoItem id={id} obj={()=>getObjVide({...item})} {...itemprops}/>
+                <ListVideoItem id={id} obj={()=>getObjVideo({...item})} {...itemprops}/>
             </li>
         )
     })
