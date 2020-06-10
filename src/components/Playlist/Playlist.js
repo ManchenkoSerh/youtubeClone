@@ -3,8 +3,16 @@ import "./Playlist.css"
 import {Icon, Grid} from 'semantic-ui-react';
 import VideoList from "../../containers/video-list/VideoList"
 import CommentsItem from "../comments-item/CommentsItem"
+import { useLocation } from "react-router-dom"
 
 const PlayList=({comments=[],getComments,getVideo,obj,obj2})=>{
+    function useQuery() {
+        return new URLSearchParams(useLocation().search);
+    }
+    let query = useQuery();
+    //query.get("id") Get Id from url params url/player/?id=
+
+
     if (typeof obj.id == 'object') {
         obj.id = obj.id.videoId
     }
