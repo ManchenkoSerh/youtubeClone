@@ -1,15 +1,15 @@
-import {all} from "redux-saga/effects"
+import { all } from "redux-saga/effects";
 import {
-    watchfetchTask,
-    watchfetchInfo,
-    watchVideoSearch,
-    watchCommentsVideo
+  watchfetchTask,
+  watchfetchInfo,
+  watchVideoSearch,
+  watchCommentsVideo,
 } from "./taskSage";
-export default function* rootSaga(){
-    yield all([
-        watchfetchTask(),
-        watchfetchInfo(),
-        watchVideoSearch(),
-        watchCommentsVideo()
-    ])
+export default function* rootSaga() {
+  yield all([
+    watchfetchTask(),
+    watchfetchInfo(),
+    watchVideoSearch(),
+    watchCommentsVideo(),
+  ]);
 }

@@ -3,7 +3,7 @@ import {ApiKey, URL} from "../types/types";
 export default class Api{
 
     async getDate(){
-        const res=await fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&regionCode=US&key=${ApiKey}`)
+        const res=await fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&regionCode=JP&key=${ApiKey}`)
         return await res.json();
     }
     async getInfoVideo(idVideo){
@@ -11,8 +11,7 @@ export default class Api{
         return await res.json();
     }
     async getSearchVideo(query) {
-        const res=await fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
-        debugger;
+        const res=await fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&type=video&key=${ApiKey}`)
         return await res.json();
     }
     async getCommentsVideo(idChennal) {
