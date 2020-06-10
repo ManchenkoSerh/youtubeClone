@@ -4,6 +4,6 @@ import HeaderYT from "../../components/header/HeaderYT"
 import {getVideoSearch} from "../../redux/action/action";
 
 const mapDispatchToProps=(dispatch)=>({
-    searchWords:(word)=>dispatch(getVideoSearch(word))
+     searchWords:(word)=>dispatch(getVideoSearch(word))
 })
 export default (mapDispatchToProps)(HeaderYT);

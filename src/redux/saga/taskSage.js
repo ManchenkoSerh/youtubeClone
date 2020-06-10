@@ -1,18 +1,41 @@
-//import API from "../API/Api";
 import {call,put,takeEvery} from "redux-saga/effects"
-import {getAllDataSuccess} from  "../action/action"
-import {ApiKey, GET_ALL_VIDEOS_SUCCESS, REQUEST_POSTS} from "../types/types";
+import {getAllDataSuccess, fetchVideoSuccess, fetchSearchVideoSuccess, fetchCommentsSuccess} from "../action/action"
+import {
+    FETCH_ALL_DATA_REQUEST,
+    FETCH_VIDEO_REQUEST,
+    FETCH_SEARCH_VIDEO_REQUEST,
+    GET_COMMENT_VIDEO_REQUEST
+} from "../types/types";
+import Api from "../API/Api";
 
-//const _API=new API()
-function* fetchTask(){
-    const tasks=yield call(getAllData);
-    yield put(getAllDataSuccess(tasks.items))
-}
 export function* watchfetchTask(){
-    yield  takeEvery(REQUEST_POSTS,fetchTask)
+    yield  takeEvery(FETCH_ALL_DATA_REQUEST,fetchTask)
+}
+export function* watchfetchInfo(){
+    yield  takeEvery(FETCH_VIDEO_REQUEST,fetchInfo)
+}
+export function* watchVideoSearch(){
+    yield takeEvery(FETCH_SEARCH_VIDEO_REQUEST,fetchSearchVideo)
+}
+export function* watchCommentsVideo(){
+    yield takeEvery(GET_COMMENT_VIDEO_REQUEST,fetchCommentsVideo)
+}
+const API=new Api()
+function* fetchTask(){
+    const payload=yield call(API.getDate);
+    yield put(getAllDataSuccess(payload.items))
+}
+function* fetchInfo(idVideo){
+    const res=yield call(API.getInfoVideo,idVideo.payload);
+    yield put(fetchVideoSuccess(res))
+}
+function* fetchSearchVideo(query){
+    const res=yield call(API.getSearchVideo,query.payload);
+    yield put(fetchSearchVideoSuccess(res.items))
+}
+function* fetchCommentsVideo(idChennal){
+    const res=yield call(API.getCommentsVideo,idChennal.payload);
+    yield put(fetchCommentsSuccess(res.items))
 }
 
-async function getAllData(){
-    const responce=await fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&regionCode=US&key=${ApiKey}`)
-    return await responce.json()
-}
+

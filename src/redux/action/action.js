@@ -1,55 +1,33 @@
 import {
-    GET_ALL_VIDEOS_SUCCESS,
-    GET_VIDEO_SUCCESS,
-    GET_ICON_CHENNAL_SUCCESS,
+    FETCH_ALL_DATA_SUCCESS,
+    FETCH_VIDEO_SUCCESS,
+    FETCH_ALL_DATA_REQUEST,
     GET_VIDEO_INFO_SUCCESS,
-    GET_SEARCH_VIDEO_SUCCESS,
+    FETCH_SEARCH_VIDEO_REQUEST,
+    FETCH_SEARCH_VIDEO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
+    GET_COMMENT_VIDEO_REQUEST,
     GET_SEARCH_WORD_SUCCESS,
     ApiKey,
     URL,
-    REQUEST_POSTS
+     FETCH_VIDEO_REQUEST
 } from "../types/types";
 
 export const getAllDataSuccess=(data)=>({
-    type:GET_ALL_VIDEOS_SUCCESS,
+    type:FETCH_ALL_DATA_SUCCESS,
     payload:data
 })
-///**********************************************************
+export const getAllData=()=>({type: FETCH_ALL_DATA_REQUEST})
 
-export function fetchPosts() {
-    return {
-        type: REQUEST_POSTS
-    }
-}
-
-    ////////****************************
-
-export const getAllData=(token)=>(dispatch)=>{
-
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&pageToken=${token}&regionCode=US&key=${ApiKey}`, {
-        })
-        .then((res)=>res.json())
-        .then(res=>{console.log(res);
-        debugger
-            //dispatch(SaveToken(res.nextPageToken));
-            dispatch(getAllDataSuccess(res.items))
-        })
-}
-export const getVide=(data)=>({
+export const getObjectVideo=(data)=>({
     type:GET_VIDEO_INFO_SUCCESS,
     payload:data
 })
-
-export const getVideoSuccess=(idVideo)=>({
-    type:GET_VIDEO_SUCCESS,
+export const fetchVideoSuccess=(idVideo)=>({
+    type:FETCH_VIDEO_SUCCESS,
         payload:idVideo
 })
-export const getVideo=(idVideo)=>(dispatch)=>{
-    fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
-        .then(res=>res.json())
-        .then(res=>{dispatch(getVideoSuccess(res))})
-}
+export const fetchVideo=(idVideo)=>({type: FETCH_VIDEO_REQUEST,payload:idVideo})
 
 /**
  * Youtube Search Video API
@@ -59,28 +37,20 @@ export const keyWord=(word)=>({
     type:GET_SEARCH_WORD_SUCCESS,
     payload:word
 })
-export const getSearchVideoSuccess=(data)=>({
-    type:GET_SEARCH_VIDEO_SUCCESS,
+export const fetchSearchVideoSuccess=(data)=>({
+    type:FETCH_SEARCH_VIDEO_SUCCESS,
     payload:data
 })
+export const fetchVideoSearch=(query)=>({type:FETCH_SEARCH_VIDEO_REQUEST,payload:query})
 
-export const getVideoSearch = (query) => (dispatch) => {
-    fetch(`${URL}/search?part=snippet&maxResults=25&q=${query}&key=${ApiKey}`)
-    .then((res) => res.json())
-    .then((res) => dispatch(getSearchVideoSuccess(res.items)))
-}
-export const getCommentsSuccess=(data)=>({
+export const fetchCommentsSuccess=(data)=>({
     type:GET_COMMENT_VIDEO_SUCCESS,
     payload:data
 })
-export const getComments=(idChennal)=>(dispatch)=>{
-    fetch(`${URL}/commentThreads?part=snippet%2Creplies&videoId=${idChennal}&key=${ApiKey}`)
-        .then(res=>res.json())
-        .then((res) => dispatch(getCommentsSuccess(res)))
-}
+export const fetchComments=(idChennal)=>({type:GET_COMMENT_VIDEO_REQUEST,payload:idChennal})
 
 
-
+//******************************************************
 export const addVideosSuccess=(data)=>({
     type:"ADD_VIDEO_SUCCESS",
     payload:data

@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware,compose} from "redux";
 import thunk from "redux-thunk";
 import reducer from "../reducer/index";
-import {watchfetchTask} from "../saga/taskSage";
+import rootSaga from "../saga/rootSaga";
 import createSagaMiddleware from 'redux-saga'
 
 const sagaMiddleware=createSagaMiddleware();
@@ -11,5 +11,5 @@ const store=createStore(
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     ));
 
-sagaMiddleware.run(watchfetchTask)
+sagaMiddleware.run(rootSaga)
 export default store;

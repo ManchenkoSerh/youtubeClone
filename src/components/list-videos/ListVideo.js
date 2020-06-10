@@ -4,12 +4,11 @@ import "./ListVideo.css"
 
 const ListVideo=({state=[],fetchPosts,getObjVideo,addVideos,token})=>{
     async function parseListVideo() {
-        debugger
         await fetchPosts()
     }
-    async function parseaddVideo() {
-        await addVideos(token)
-    }
+    // async function parseaddVideo() {
+    //     await addVideos(token)
+    // }
     // async function parseAddListVideo() {
     //     await addVideos()
     // }
