@@ -4,7 +4,8 @@ import ListVideoSearch from "../../components/list-video-search/ListVideoSearch"
 
 const mapStateToProps=(state)=>({
     state:state.searchVideos,
-    searchWord:state.searchWord
+    searchWord:state.searchWord,
+    loading:state.loading
 })
 const mapDispatchToProps=(dispatch)=>({
     getSearchVideo:(query)=>dispatch(fetchVideoSearch(query)),

@@ -1,25 +1,19 @@
 import React,{ useEffect } from 'react'
 import { Grid } from 'semantic-ui-react'
 import { TrendingListItem } from '../trending-list-item/TrendingListItem'
+import Spinner from "../spinner/spinner";
 
-export const TrendingListVideo = ({state=[],getList,getObjVideo,addVideos}) => {
-    async function parseListVideo() {
-        await getList()
+export const TrendingListVideo = ({state=[],fetchAllData,getObjVideo,addVideos,loading}) => {
+    function parseListVideo() {
+         fetchAllData()
     }
-    async function parseAddVideo() {
-        await addVideos()
-    }
+
     useEffect(() => {
         parseListVideo();
-        // window.addEventListener("scroll",()=>{
-        //     const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
-        //     const scrolled=window.scrollY;
-        //     if(Math.ceil(scrolled)===scrolltable){
-        //         parseAddVideo()
-        //     }
-        // })
     }, [])
-
+    if(loading){
+        return <Spinner/>
+    }
     const list = state.map( (item) => {
         const { id, ...itemprops } = item;
         console.log(item)

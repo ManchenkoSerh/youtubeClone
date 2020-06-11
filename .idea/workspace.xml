@@ -20,23 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02a0ff9c-a71a-457b-ae07-e1dc32ba2618" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/spinner/spinner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/spinner/styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/input-search/InputSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/input-search/InputSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/API/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/saga/taskSage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/taskSage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/types/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,8 +89,9 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Senko\Documents\Senko\youtubeClone\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="configurable.stylesheets.stylelint" />
+    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Desktop\cloneYoutube\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -114,7 +118,9 @@
       <workItem from="1591607965859" duration="7514000" />
       <workItem from="1591702998218" duration="7081000" />
       <workItem from="1591727822809" duration="9517000" />
-      <workItem from="1591773988010" duration="5267000" />
+      <workItem from="1591773988010" duration="18614000" />
+      <workItem from="1591810956358" duration="11852000" />
+      <workItem from="1591859965365" duration="14271000" />
     </task>
     <servers />
   </component>

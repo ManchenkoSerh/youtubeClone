@@ -1,5 +1,11 @@
 import {call,put,takeEvery} from "redux-saga/effects"
-import {getAllDataSuccess, fetchVideoSuccess, fetchSearchVideoSuccess, fetchCommentsSuccess} from "../action/action"
+import {
+    getAllDataSuccess,
+    fetchVideoSuccess,
+    fetchSearchVideoSuccess,
+    fetchCommentsSuccess,
+    SaveToken, DelToken, fetchAllDataSuccess, fetchDataError
+} from "../action/action"
 import {
     FETCH_ALL_DATA_REQUEST,
     FETCH_VIDEO_REQUEST,
@@ -21,9 +27,16 @@ export function* watchCommentsVideo(){
     yield takeEvery(GET_COMMENT_VIDEO_REQUEST,fetchCommentsVideo)
 }
 const API=new Api()
-function* fetchTask(){
-    const payload=yield call(API.getDate);
-    yield put(getAllDataSuccess(payload.items))
+function* fetchTask(nextToken){
+    try{
+        const payload=yield call(API.getData,nextToken.payload);
+        yield  put(SaveToken(payload.nextPageToken))
+        yield put(fetchAllDataSuccess(payload.items))
+    }catch (e) {
+        yield put(fetchDataError(e))
+    }
+
+   // localStorage.setItem("token",payload.nextPageToken)
 }
 function* fetchInfo(idVideo){
     const res=yield call(API.getInfoVideo,idVideo.payload);

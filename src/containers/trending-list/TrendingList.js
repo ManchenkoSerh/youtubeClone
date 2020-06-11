@@ -1,12 +1,13 @@
 import {connect} from "react-redux"
-import {addVideos, getAllData, getObjectVideo} from "../../redux/action/action";
+import {addVideos, fetchAllData, getAllData, getObjectVideo} from "../../redux/action/action";
 import { TrendingListVideo } from "../../components/trending-list/TrendingListVideo";
 
 const mapStateToProps=(state)=>({
-    state:state.todos
+    state:state.todos,
+    loading:state.loading
 })
 const mapDispatchToProps=(dispatch)=>({
-    getList:()=>dispatch(getAllData()),
+    fetchAllData:()=>dispatch(fetchAllData()),
     getObjVideo:(obj)=>dispatch(getObjectVideo(obj)),
     addVideos:()=>dispatch(addVideos())
 })

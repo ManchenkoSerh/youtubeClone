@@ -10,14 +10,15 @@ import {
     GET_SEARCH_WORD_SUCCESS,
     ApiKey,
     URL,
-     FETCH_VIDEO_REQUEST
+    FETCH_VIDEO_REQUEST, FETCH_DATA_ERROR, FETCH_DATA_WAITING
 } from "../types/types";
 
-export const getAllDataSuccess=(data)=>({
+export const fetchAllDataSuccess=(data)=>({
     type:FETCH_ALL_DATA_SUCCESS,
     payload:data
 })
-export const getAllData=()=>({type: FETCH_ALL_DATA_REQUEST})
+export const fetchDataError=(error)=>({type:FETCH_DATA_ERROR,error})
+export const fetchAllData=(token)=>({type: FETCH_ALL_DATA_REQUEST,payload:token})
 
 export const getObjectVideo=(data)=>({
     type:GET_VIDEO_INFO_SUCCESS,
@@ -29,10 +30,6 @@ export const fetchVideoSuccess=(idVideo)=>({
 })
 export const fetchVideo=(idVideo)=>({type: FETCH_VIDEO_REQUEST,payload:idVideo})
 
-/**
- * Youtube Search Video API
- *
- */
 export const keyWord=(word)=>({
     type:GET_SEARCH_WORD_SUCCESS,
     payload:word
@@ -58,6 +55,9 @@ export const addVideosSuccess=(data)=>({
 export const SaveToken=(data)=>({
     type:"SAVE_TOKEN_SUCCESS",
     payload:data
+})
+export const DelToken=()=>({
+    type:"DEL_TOKEN"
 })
 export const addVideos=(nextToken)=>(dispatch)=>{
 

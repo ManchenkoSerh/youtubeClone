@@ -4,7 +4,7 @@ const ListVideoSearchItem=({id,snippet,obj, channelId})=>{
 console.log('test', obj)
         return(
             <div className="container-item">
-                <img className="container-item__img" src={snippet.thumbnails.default.url} />
+                <img className="container-item__img" src={snippet.thumbnails.medium.url} />
                 <div className="container-item__info">
                     <p onClick={obj}><Link to={`/player/${id.videoId}`}>{snippet.title}</Link></p>
                     <p>{snippet.channelTitle}</p>

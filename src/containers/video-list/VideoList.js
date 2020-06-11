@@ -1,13 +1,15 @@
 import ListVideo from "../../components/list-videos/ListVideo";
 import {connect} from "react-redux"
-import {getAllData, getObjectVideo, addVideos, fetchVideo} from "../../redux/action/action";
+import {getAllData, getObjectVideo, addVideos, fetchVideo, fetchAllData} from "../../redux/action/action";
 
 const mapStateToProps=(state)=>({
     state:state.todos,
-   token:state.token
+   token:state.token,
+    loading:state.loading,
+    error:state.error
 })
 const mapDispatchToProps=(dispatch)=>({
-    fetchPosts:()=>dispatch(getAllData()),
+    fetchAllData:(token)=>dispatch(fetchAllData(token)),
     getObjVideo:(obj)=>dispatch(getObjectVideo(obj)),
     addVideos:(token)=>dispatch(addVideos(token))
 })

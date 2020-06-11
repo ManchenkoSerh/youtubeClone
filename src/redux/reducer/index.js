@@ -3,7 +3,11 @@ import {
     FETCH_VIDEO_SUCCESS,
     GET_COMMENT_VIDEO_SUCCESS,
     GET_SEARCH_VIDEO_SUCCESS,
-    GET_SEARCH_WORD_SUCCESS, FETCH_ALL_DATA_SUCCESS, GET_VIDEO_INFO_SUCCESS,FETCH_SEARCH_VIDEO_SUCCESS
+    GET_SEARCH_WORD_SUCCESS,
+    FETCH_ALL_DATA_SUCCESS,
+    GET_VIDEO_INFO_SUCCESS,
+    FETCH_SEARCH_VIDEO_SUCCESS,
+    FETCH_DATA_ERROR
 } from "../types/types";
 
 const initialState={
@@ -14,21 +18,32 @@ const initialState={
     obj:[],
     obj2:[],
     searchWord:"",
-    token:""
+    token:"",
+    loading:true,
+    error:null
 };
 function reducer(state=initialState,action){
     switch (action.type) {
         case FETCH_ALL_DATA_SUCCESS:
             return {
                 ...state,
-                todos:action.payload
-
-
+                todos:[
+                    ...state.todos,
+                    ...action.payload
+                    ],
+                loading: false
+            }
+        case FETCH_DATA_ERROR:
+            return{
+                ...state,
+                loading: false,
+                error: action.error
             }
         case FETCH_SEARCH_VIDEO_SUCCESS:
             return{
                 ...state,
-                searchVideos:action.payload
+                searchVideos:action.payload,
+                loading: false
             }
         case GET_COMMENT_VIDEO_SUCCESS:
             return{
