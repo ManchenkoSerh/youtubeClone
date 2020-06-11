@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import ListVideoSearchItem from "../list-video-search-item/ListVideoSearchItem";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 import Spinner from "../spinner/spinner";

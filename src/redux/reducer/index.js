@@ -96,5 +96,23 @@ function reducer(state=initialState,action){
             return state;
     }
 
+    case GET_SEARCH_WORD_SUCCESS:
+      return {
+        ...state,
+        searchWord: action.payload,
+      };
+    case "ADD_VIDEO_SUCCESS":
+      return {
+        ...state,
+        todos: [...state.todos, ...action.payload],
+      };
+    case "ADD_VIDEO_SEARCH_SUCCESS":
+      return {
+        ...state,
+        searchVideos: [...state.searchVideos, ...action.payload],
+      };
+    default:
+      return state;
+  }
 }
 export default  reducer;

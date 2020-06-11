@@ -40,6 +40,7 @@ const ListVideo = ({
    }
 
   console.log(state);
+
   const list = state.map((item) => {
     const { id, ...itemprops } = item;
     //console.log('needed item info', item);

@@ -1,3 +1,4 @@
+
 import {connect} from "react-redux"
 import {addVideos, fetchAllData, getAllData, getObjectVideo} from "../../redux/action/action";
 import { TrendingListVideo } from "../../components/trending-list/TrendingListVideo";
@@ -12,3 +13,4 @@ const mapDispatchToProps=(dispatch)=>({
     addVideos:()=>dispatch(addVideos())
 })
 export default connect(mapStateToProps,mapDispatchToProps)(TrendingListVideo);
+

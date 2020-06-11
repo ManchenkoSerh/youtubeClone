@@ -20,15 +20,19 @@ export const fetchAllDataSuccess=(data)=>({
 export const fetchDataError=(error)=>({type:FETCH_DATA_ERROR,error})
 export const fetchAllData=(token)=>({type: FETCH_ALL_DATA_REQUEST,payload:token})
 
-export const getObjectVideo=(data)=>({
-    type:GET_VIDEO_INFO_SUCCESS,
-    payload:data
-})
-export const fetchVideoSuccess=(idVideo)=>({
-    type:FETCH_VIDEO_SUCCESS,
-        payload:idVideo
-})
-export const fetchVideo=(idVideo)=>({type: FETCH_VIDEO_REQUEST,payload:idVideo})
+
+export const getObjectVideo = (data) => ({
+  type: GET_VIDEO_INFO_SUCCESS,
+  payload: data,
+});
+export const fetchVideoSuccess = (idVideo) => ({
+  type: FETCH_VIDEO_SUCCESS,
+  payload: idVideo,
+});
+export const fetchVideo = (idVideo) => ({
+  type: FETCH_VIDEO_REQUEST,
+  payload: idVideo,
+});
 
 export const keyWord=(word)=>({
     type:GET_SEARCH_WORD_SUCCESS,
@@ -46,6 +50,14 @@ export const fetchCommentsSuccess=(data)=>({
 })
 export const fetchComments=(idChennal)=>({type:GET_COMMENT_VIDEO_REQUEST,payload:idChennal})
 
+export const fetchCommentsSuccess = (data) => ({
+  type: GET_COMMENT_VIDEO_SUCCESS,
+  payload: data,
+});
+export const fetchComments = (idChennal) => ({
+  type: GET_COMMENT_VIDEO_REQUEST,
+  payload: idChennal,
+});
 
 //******************************************************
 export const addVideosSuccess=(data)=>({
@@ -70,12 +82,12 @@ export const addVideos=(nextToken)=>(dispatch)=>{
     })
 }
 
-export const addSearchSuccess=(data)=>({
-    type:"ADD_VIDEO_SEARCH_SUCCESS",
-    payload:data
-})
-export const addSearchVideos=(query)=>(dispatch)=>{
-    fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
-        .then(res=>res.json())
-        .then(res=>dispatch(addSearchSuccess(res.items)))
-}
+export const addSearchSuccess = (data) => ({
+  type: "ADD_VIDEO_SEARCH_SUCCESS",
+  payload: data,
+});
+export const addSearchVideos = (query) => (dispatch) => {
+  fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
+    .then((res) => res.json())
+    .then((res) => dispatch(addSearchSuccess(res.items)));
+};

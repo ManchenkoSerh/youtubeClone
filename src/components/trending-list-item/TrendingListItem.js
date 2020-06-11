@@ -1,7 +1,7 @@
-import React from 'react'
-import {Grid} from 'semantic-ui-react'
-import {Link} from "react-router-dom";
-import './TrendingListItem.css'
+import React from "react";
+import { Grid } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import "./TrendingListItem.css";
 
 export const TrendingListItem = ({snippet,statistics,id,obj}) => {
     return (
