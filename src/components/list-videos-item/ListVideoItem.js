@@ -8,7 +8,7 @@ export default class ListVideoItem extends Component {
       <div className="container-item">
         <img
           className="container-item__img"
-          src={snippet.thumbnails.default.url}
+          src={snippet.thumbnails.standard.url}
         />
         <div className="container-item__info">
           <p onClick={obj}>

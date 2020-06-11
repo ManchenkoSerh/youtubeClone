@@ -12,7 +12,7 @@ const mapStateToProps = (state) => ({
   token: state.token,
 });
 const mapDispatchToProps = (dispatch) => ({
-  fetchPosts: () => dispatch(getAllData()),
+  fetchAllData: (token) => dispatch(getAllData(token)),
   getObjVideo: (obj) => dispatch(getObjectVideo(obj)),
   addVideos: (token) => dispatch(addVideos(token)),
 });

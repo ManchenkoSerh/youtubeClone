@@ -23,7 +23,10 @@ function reducer(state = initialState, action) {
     case FETCH_ALL_DATA_SUCCESS:
       return {
         ...state,
-        todos: action.payload,
+        todos:[
+            ...state.todos,...action.payload
+        ]
+        ,
       };
     case FETCH_SEARCH_VIDEO_SUCCESS:
       return {

@@ -4,36 +4,31 @@ import "./ListVideo.css";
 
 const ListVideo = ({
   state = [],
-  fetchPosts,
+  fetchAllData,
   getObjVideo,
   addVideos,
   token,
 }) => {
   async function parseListVideo() {
-    await fetchPosts();
+    await fetchAllData(token);
   }
-  // async function parseaddVideo() {
-  //     await addVideos(token)
-  // }
-  // async function parseAddListVideo() {
-  //     await addVideos()
-  // }
 
   useEffect(() => {
-    // else{parseListVideo()}
-    parseListVideo();
-
-    // console.log('parsec')
-    // window.addEventListener("scroll",()=>{
-    //     const scrolltable=document.documentElement.scrollHeight-window.innerHeight;
-    //     const scrolled=window.scrollY;
-    //
-    //     //parseListVideo(token);
-    //     if(Math.ceil(scrolled)===scrolltable){
-    //         parseaddVideo(token);
-    //     }
-    // })
-  }, []);
+    if (token == "") {
+      parseListVideo(token);
+    } else {
+      console.log("parsec");
+      window.addEventListener("scroll", () => {
+        const scrolltable =
+            document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        if (Math.ceil(scrolled) === scrolltable) {
+          console.log("AAA");
+          parseListVideo(token);
+        }
+      });
+    }
+  }, [token]);
 
   const list = state.map((item) => {
     const { id, ...itemprops } = item;

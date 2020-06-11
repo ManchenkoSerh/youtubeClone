@@ -17,8 +17,9 @@ export const getAllDataSuccess = (data) => ({
   type: FETCH_ALL_DATA_SUCCESS,
   payload: data,
 });
-export const getAllData = () => ({
+export const getAllData = (token) => ({
   type: FETCH_ALL_DATA_REQUEST,
+  payload:token
 });
 
 export const getObjectVideo = (data) => ({

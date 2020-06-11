@@ -21,16 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="02a0ff9c-a71a-457b-ae07-e1dc32ba2618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/comments-item/CommentsItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comments-item/CommentsItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/API/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/types/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/saga/taskSage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/taskSage.js" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +80,18 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Senko\Documents\Senko\youtubeClone\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -114,23 +126,25 @@
       <workItem from="1591785753614" duration="3851000" />
       <workItem from="1591791707861" duration="2604000" />
       <workItem from="1591875054664" duration="808000" />
+      <workItem from="1591903272512" duration="2984000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="828" y="412" key="#ESLint" timestamp="1591614670484">
@@ -177,5 +191,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591874595819" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/redux/API/Api.js</url>
+          <line>4</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Playlist/Playlist.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

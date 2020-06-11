@@ -3,7 +3,7 @@ import {
   getAllDataSuccess,
   fetchVideoSuccess,
   fetchSearchVideoSuccess,
-  fetchCommentsSuccess,
+  fetchCommentsSuccess, SaveToken,
 } from "../action/action";
 import {
   FETCH_ALL_DATA_REQUEST,
@@ -26,8 +26,9 @@ export function* watchCommentsVideo() {
   yield takeEvery(GET_COMMENT_VIDEO_REQUEST, fetchCommentsVideo);
 }
 const API = new Api();
-function* fetchTask() {
-  const payload = yield call(API.getDate);
+function* fetchTask(token) {
+  const payload = yield call(API.getDate,token.payload);
+  yield  put(SaveToken(payload.nextPageToken))
   yield put(getAllDataSuccess(payload.items));
 }
 function* fetchInfo(idVideo) {
