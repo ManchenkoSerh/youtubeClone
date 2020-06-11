@@ -9,5 +9,5 @@ export const GET_COMMENT_VIDEO_SUCCESS = "GET_COMMENT_VIDEO_SUCCESS";
 export const GET_VIDEO_INFO_SUCCESS = "GET_VIDEO_INFO_SUCCESS";
 export const GET_ICON_CHENNAL_SUCCESS = "GET_ICON_CHENNAL_SUCCESS";
 export const GET_SEARCH_WORD_SUCCESS = "GET_SEARCH_WORD_SUCCESS";
-export const ApiKey = "AIzaSyAbzCCBX1PGPZWi6IpaPpior8FqI4HV4Bk";
+export const ApiKey = "AIzaSyB0-zxYRTVmPCkuX3dGHUYr-tUIuJbsicc";
 export const URL = "https://www.googleapis.com/youtube/v3";

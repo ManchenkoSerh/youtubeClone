@@ -14,7 +14,7 @@ const initialState = {
   searchVideos: [],
   comments: [],
   obj: [],
-  obj2: [],
+  videoInfo: [],
   searchWord: "",
   token: "",
 };
@@ -48,7 +48,7 @@ function reducer(state = initialState, action) {
     case FETCH_VIDEO_SUCCESS:
       return {
         ...state,
-        obj2: action.payload,
+        videoInfo: action.payload.items[0],
       };
 
     case GET_SEARCH_WORD_SUCCESS:

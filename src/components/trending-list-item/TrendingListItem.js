@@ -9,7 +9,7 @@ export const TrendingListItem = ({ snippet, statistics, id, obj }) => {
       <img onClick={obj} src={snippet.thumbnails.medium.url} alt="VideoImage" />
       <div>
         <div onClick={obj}>
-          <Link to={`/player/${id}`}>{snippet.title}</Link>
+          <Link to={`/player?id=${id}`}>{snippet.title}</Link>
         </div>
         <span>{snippet.channelTitle}</span>
         <p>{statistics.viewCount} просмотров</p>
