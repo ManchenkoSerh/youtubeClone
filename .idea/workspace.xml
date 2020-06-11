@@ -22,13 +22,13 @@
     <list default="true" id="02a0ff9c-a71a-457b-ae07-e1dc32ba2618" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Playlist/Playlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list-video-search-item/ListVideoSearchItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-video-search-item/ListVideoSearchItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/comments-item/CommentsItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/comments-item/CommentsItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos-item/ListVideoItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list-item/TrendingListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/play-video/PlayVideo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/API/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/rootSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/saga/taskSage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/taskSage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/types/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +80,23 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Senko\Documents\Senko\youtubeClone\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -96,6 +113,7 @@
       <workItem from="1591773988010" duration="5267000" />
       <workItem from="1591785753614" duration="3851000" />
       <workItem from="1591791707861" duration="2604000" />
+      <workItem from="1591875054664" duration="808000" />
     </task>
     <servers />
   </component>
@@ -151,9 +169,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591609845813" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591793703803">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1591875110655">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591793703803" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591875110655" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1591874595819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591874595819" />
   </component>
 </project>

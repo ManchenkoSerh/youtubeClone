@@ -12,7 +12,7 @@ export default class ListVideoItem extends Component {
         />
         <div className="container-item__info">
           <p onClick={obj}>
-            <Link to={`/player/${id}`}>{snippet.title}</Link>
+            <Link to={`/player?id=${id}`}>{snippet.title}</Link>
           </p>
           <p>{snippet.channelTitle}</p>
           <p>{statistics.viewCount} просмотров</p>

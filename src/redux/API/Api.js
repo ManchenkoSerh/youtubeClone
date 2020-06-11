@@ -7,7 +7,7 @@ export default class Api{
         return await res.json();
     }
     async getInfoVideo(idVideo){
-        const res=await fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo.id.videoId}&key=${ApiKey}`)
+        const res=await fetch(`${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo}&key=${ApiKey}`)
         return await res.json();
     }
     async getSearchVideo(query) {
