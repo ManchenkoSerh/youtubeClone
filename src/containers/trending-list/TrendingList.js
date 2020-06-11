@@ -8,10 +8,12 @@ import { TrendingListVideo } from "../../components/trending-list/TrendingListVi
 
 const mapStateToProps = (state) => ({
   state: state.todos,
+    isLoading:state.isLoading,
+  isError: state.isError
 });
 const mapDispatchToProps = (dispatch) => ({
   getList: () => dispatch(getAllData()),
-  getObjVideo: (obj) => dispatch(getObjectVideo(obj)),
-  addVideos: () => dispatch(addVideos()),
+  //getObjVideo: (obj) => dispatch(getObjectVideo(obj)),
+  //addVideos: () => dispatch(addVideos()),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(TrendingListVideo);

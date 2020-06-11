@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css";
+import Spinner from "../spinner/spinner";
 
 const ListVideo = ({
   state = [],
@@ -8,6 +9,8 @@ const ListVideo = ({
   getObjVideo,
   addVideos,
   token,
+                     isLoading,
+    isError
 }) => {
   async function parseListVideo() {
     await fetchAllData(token);
@@ -30,22 +33,39 @@ const ListVideo = ({
     }
   }, [token]);
 
-  const list = state.map((item) => {
-    const { id, ...itemprops } = item;
-    //console.log('needed item info', item);
-    return (
-      <li key={id} className="block-container">
-        <ListVideoItem
-          id={id}
-          obj={() => getObjVideo({ ...item })}
-          {...itemprops}
-        />
-      </li>
-    );
-  });
+  // else if(error){
+  //   return <p>error!</p>
+  // }
+  // const list = state.map((item) => {
+  //   const { id, ...itemprops } = item;
+  //   return (
+  //     <li key={id} className="block-container">
+  //       <ListVideoItem
+  //         id={id}
+  //         //obj={() => getObjVideo({ ...item })}
+  //         {...itemprops}
+  //       />
+  //     </li>
+  //   );
+  // });
   return (
     <div>
-      <ul className="block-lists">{list}</ul>
+      {isLoading?(<Spinner/>):isError?(<p>Error!!</p>):(
+          <ul className="block-lists">
+        {state.map((item) => {
+          const { id, ...itemprops } = item;
+          return (
+              <li key={id} className="block-container">
+                <ListVideoItem
+                    id={id}
+                    //obj={() => getObjVideo({ ...item })}
+                    {...itemprops}
+                />
+              </li>
+          );
+        })}
+          </ul>)}
+
     </div>
   );
 };

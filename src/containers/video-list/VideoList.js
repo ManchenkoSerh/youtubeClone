@@ -10,10 +10,12 @@ import {
 const mapStateToProps = (state) => ({
   state: state.todos,
   token: state.token,
+  isLoading:state.isLoading,
+  isError:state.isError
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchAllData: (token) => dispatch(getAllData(token)),
   getObjVideo: (obj) => dispatch(getObjectVideo(obj)),
-  addVideos: (token) => dispatch(addVideos(token)),
+ // addVideos: (token) => dispatch(addVideos(token)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(ListVideo);

@@ -10,7 +10,8 @@ import {
   GET_SEARCH_WORD_SUCCESS,
   ApiKey,
   URL,
-  FETCH_VIDEO_REQUEST,
+  FETCH_DATA_LOADING,
+  FETCH_VIDEO_REQUEST, FETCH_DATA_ERROR, SAVE_TOKEN_SUCCESS,
 } from "../types/types";
 
 export const getAllDataSuccess = (data) => ({
@@ -21,6 +22,10 @@ export const getAllData = (token) => ({
   type: FETCH_ALL_DATA_REQUEST,
   payload:token
 });
+
+export const fetchDataLoading=()=>({type:"SHOW_LOADER"})
+export const fetchDataLoadinghide=()=>({type:"HIDE_LOADER"})
+export const fetchDataError=()=>({type:FETCH_DATA_ERROR})
 
 export const getObjectVideo = (data) => ({
   type: GET_VIDEO_INFO_SUCCESS,
@@ -62,32 +67,32 @@ export const fetchComments = (idChennal) => ({
 });
 
 //******************************************************
-export const addVideosSuccess = (data) => ({
-  type: "ADD_VIDEO_SUCCESS",
-  payload: data,
-});
+// export const addVideosSuccess = (data) => ({
+//   type: SAVE_TOKEN_SUCCESS,
+//   payload: data,
+// });
 export const SaveToken = (data) => ({
-  type: "SAVE_TOKEN_SUCCESS",
+  type: SAVE_TOKEN_SUCCESS,
   payload: data,
 });
-export const addVideos = (nextToken) => (dispatch) => {
-  fetch(
-    `${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`
-  )
-    .then((res) => res.json())
-    .then((res) => {
-      console.log(res);
-      dispatch(SaveToken(res.nextPageToken));
-      dispatch(addVideosSuccess(res.items));
-    });
-};
+// export const addVideos = (nextToken) => (dispatch) => {
+//   fetch(
+//     `${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&maxResults=10&chart=mostPopular&pageToken=${nextToken}&regionCode=US&key=${ApiKey}`
+//   )
+//     .then((res) => res.json())
+//     .then((res) => {
+//       console.log(res);
+//       dispatch(SaveToken(res.nextPageToken));
+//       dispatch(addVideosSuccess(res.items));
+//     });
+// };
 
-export const addSearchSuccess = (data) => ({
-  type: "ADD_VIDEO_SEARCH_SUCCESS",
-  payload: data,
-});
-export const addSearchVideos = (query) => (dispatch) => {
-  fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
-    .then((res) => res.json())
-    .then((res) => dispatch(addSearchSuccess(res.items)));
-};
+// export const addSearchSuccess = (data) => ({
+//   type: "ADD_VIDEO_SEARCH_SUCCESS",
+//   payload: data,
+// });
+// export const addSearchVideos = (query) => (dispatch) => {
+//   fetch(`${URL}/search?part=snippet&maxResults=5&q=${query}&key=${ApiKey}`)
+//     .then((res) => res.json())
+//     .then((res) => dispatch(addSearchSuccess(res.items)));
+// };

@@ -6,7 +6,7 @@ const ListVideoSearchItem = ({ id, snippet, obj, channelId }) => {
     <div className="container-item">
       <img
         className="container-item__img"
-        src={snippet.thumbnails.default.url}
+        src={snippet.thumbnails.high.url}
       />
       <div className="container-item__info">
         <p onClick={obj}>

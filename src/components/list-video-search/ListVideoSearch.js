@@ -1,19 +1,18 @@
 import React, { useEffect } from "react";
 import ListVideoSearchItem from "../list-video-search-item/ListVideoSearchItem";
 import ListVideoItem from "../list-videos-item/ListVideoItem";
+import Spinner from "../spinner/spinner";
 
 const ListVideoSearch = ({
   state = [],
   getSearchVideo,
   getObjVideo,
   searchWord,
-  addSearchVideos,
+    isLoading,isError
+
 }) => {
   async function parseSearchVideo() {
     await getSearchVideo(searchWord);
-  }
-  async function parseaddVideo() {
-    await addSearchVideos(searchWord);
   }
   useEffect(() => {
     parseSearchVideo(searchWord);
@@ -27,20 +26,37 @@ const ListVideoSearch = ({
     // })
   }, [searchWord]);
 
-  console.log("thisstate", state, searchWord);
-  const list = state.map((item) => {
-    const id = item.id.videoId;
-    return (
-      <li key={item.id.videoId} className="block-container">
-        <ListVideoSearchItem
-          id={item.id.videoId}
-          obj={() => getObjVideo({ id, ...item })}
-          {...item}
-        />
-      </li>
-    );
-  });
 
-  return <ul className="block-lists">{list}</ul>;
+  // console.log("thisstate", state, searchWord);
+  // const list = state.map((item) => {
+  //   const id = item.id.videoId;
+  //   return (
+  //     <li key={item.id.videoId} className="block-container">
+  //       <ListVideoSearchItem
+  //         id={item.id.videoId}
+  //         obj={() => getObjVideo({ id, ...item })}
+  //         {...item}
+  //       />
+  //     </li>
+  //   );
+  // });
+
+  return (<div>
+    {isLoading?(<Spinner/>):isError?(<p>Error!!</p>):
+    (<ul className="block-lists">
+    {state.map((item) => {
+      //const id = item.id.videoId;
+      return (
+          <li key={item.id.videoId} className="block-container">
+            <ListVideoSearchItem
+                id={item.id.videoId}
+                //obj={() => getObjVideo({ id, ...item })}
+                {...item}
+            />
+          </li>
+      );
+    })}
+    </ul>)}
+  </div>)
 };
 export default ListVideoSearch;

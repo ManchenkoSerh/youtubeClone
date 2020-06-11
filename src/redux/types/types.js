@@ -11,3 +11,6 @@ export const GET_ICON_CHENNAL_SUCCESS = "GET_ICON_CHENNAL_SUCCESS";
 export const GET_SEARCH_WORD_SUCCESS = "GET_SEARCH_WORD_SUCCESS";
 export const ApiKey = "AIzaSyB0-zxYRTVmPCkuX3dGHUYr-tUIuJbsicc";
 export const URL = "https://www.googleapis.com/youtube/v3";
+export const FETCH_DATA_LOADING="FETCH_DATA_LOADING";
+export const FETCH_DATA_ERROR="FETCH_DATA_ERROR";
+export const SAVE_TOKEN_SUCCESS="SAVE_TOKEN_SUCCESS"

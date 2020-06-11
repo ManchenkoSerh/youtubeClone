@@ -23,12 +23,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-video-search-item/ListVideoSearchItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-video-search-item/ListVideoSearchItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-video-search/ListVideoSearch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list-videos/ListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/trending-list/TrendingListVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/search-video/SearchVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/trending-list/TrendingList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/video-list/VideoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/API/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/API/Api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/action/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/action/action.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/saga/taskSage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/saga/taskSage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/types/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/types/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +83,9 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Senko\Documents\Senko\youtubeClone\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="project" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Desktop\youtubeClone\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,7 +133,7 @@
       <workItem from="1591785753614" duration="3851000" />
       <workItem from="1591791707861" duration="2604000" />
       <workItem from="1591875054664" duration="808000" />
-      <workItem from="1591903272512" duration="2984000" />
+      <workItem from="1591903272512" duration="10186000" />
     </task>
     <servers />
   </component>
@@ -195,12 +202,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/API/Api.js</url>
-          <line>4</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Playlist/Playlist.js</url>
           <properties lambdaOrdinal="-1" />
