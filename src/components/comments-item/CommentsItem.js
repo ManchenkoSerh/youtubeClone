@@ -7,6 +7,7 @@ const CommentsItem=({snippet})=>{
             <img
               src={snippet.topLevelComment.snippet.authorProfileImageUrl}
               alt="authorProfileImage"
+              className='round'
             />
             <div className='commentItem'>
               <b><span>{snippet.topLevelComment.snippet.authorDisplayName}</span></b>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Playlist.scss";
-import { Icon, Grid } from "semantic-ui-react";
+import {Icon, Grid, Divider} from "semantic-ui-react";
 import VideoList from "../../containers/video-list/VideoList";
 import CommentsItem from "../comments-item/CommentsItem";
 import { useLocation } from "react-router-dom";
@@ -43,7 +43,7 @@ const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
             width="100%"
             title={videoInfo.id}
           />
-          <h1>{videoInfo.snippet.title}</h1>
+          <h1 style={{margin: '0.2em 0'}}>{videoInfo.snippet.title}</h1>
           <div className="block-container__info-statistics">
             <div><span>{videoInfo.statistics.viewCount} просмотров</span></div>
             <div>
@@ -56,7 +56,10 @@ const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
             </div>
           </div>
           <span>{videoInfo.snippet.description}</span>
-          <div className="block-container__comments">{commentsAll}</div>
+          <Divider />
+          <div className="block-container__comments">
+            {commentsAll}
+          </div>
         </div>
       </Grid.Column>
       <Grid.Column width={2}>
