@@ -35,6 +35,7 @@ function* fetchTask(token) {
   try {
     //yield put(fetchDataLoading());
     const payload = yield call(API.getDate, token.payload);
+    debugger;
     yield put(SaveToken(payload.nextPageToken));
     yield put(getAllDataSuccess(payload.items));
     //yield put(fetchDataLoadinghide());

@@ -20,7 +20,7 @@ const initialState = {
   isLoading:null,
     isError:null
 };
-function reducer(state = initialState, action) {
+function data(state = initialState, action) {
   switch (action.type) {
     case FETCH_ALL_DATA_SUCCESS:
       return {
@@ -32,11 +32,7 @@ function reducer(state = initialState, action) {
           isError:false
 
       };
-    // case FETCH_DATA_LOADING:
-    //   return {
-    //     ...state,
-    //       isLoading: true
-    //   }
+
       case FETCH_DATA_ERROR:
           return{
               ...state,
@@ -86,4 +82,4 @@ function reducer(state = initialState, action) {
   }
 }
 
-export default  reducer;
+export default  data;

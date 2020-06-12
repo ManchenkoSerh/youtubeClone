@@ -7,6 +7,7 @@ import { Switch, Route } from "react-router-dom";
 import SearchVideo from "../../containers/search-video/SearchVideo";
 import PlayVideo from "../../containers/play-video/PlayVideo";
 import TrendingList from "../../containers/trending-list/TrendingList";
+import Routers from "../helpers/routes";
 
 function BodyYT() {
   return (
@@ -15,12 +16,7 @@ function BodyYT() {
         <BodyLeft />
       </Grid.Column>
       <Grid.Column width={14}>
-        <Switch>
-          <Route path="/" exact component={VideoList} />
-          <Route path="/player" component={PlayVideo} />
-          <Route path="/search" component={SearchVideo} />
-          <Route path="/trending" component={TrendingList} />
-        </Switch>
+        <Routers/>
       </Grid.Column>
     </Grid.Row>
   );

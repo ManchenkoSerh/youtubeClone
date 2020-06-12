@@ -4,6 +4,7 @@ import { Icon, Grid } from "semantic-ui-react";
 import VideoList from "../../containers/video-list/VideoList";
 import CommentsItem from "../comments-item/CommentsItem";
 import { useLocation } from "react-router-dom";
+import {ConvertNumber} from "../helpers/helpers";
 
 const PlayList = ({ comments = [], getComments, getVideo, obj, videoInfo }) => {
   function useQuery() {
@@ -46,7 +47,7 @@ const PlayList = ({ comments = [], getComments, getVideo, obj, videoInfo }) => {
           ></iframe>
           <h1>{videoInfo.snippet.title}</h1>
           <div className="block-container__info-statistics">
-            <span>{videoInfo.statistics.viewCount} просмотров</span>
+            <span>{ConvertNumber(videoInfo.statistics.viewCount)} просмотров</span>
             <Icon className="thumbs up outline" />
             <span>{videoInfo.statistics.likeCount}</span>
             <Icon className="thumbs down outline" />
