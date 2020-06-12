@@ -7,7 +7,7 @@ export default class Api{
             new URlSearchParams({
                 maxResults: 10,
                 chart: "mostPopular",
-                pageToken: nextToken,
+                //pageToken: nextToken,
                 regionCode: "US",
                 key: ApiKey,
             })
@@ -30,6 +30,7 @@ export default class Api{
             new URlSearchParams({
                 maxResults: 10,
                 q: query,
+                type: 'video',
                 key: ApiKey,
             })
         );

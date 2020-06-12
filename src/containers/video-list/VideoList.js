@@ -8,7 +8,7 @@ import {
 } from "../../redux/action/action";
 
 const mapStateToProps = (state) => ({
-  state: state.todos,
+  state: state.videos,
   token: state.token,
   isLoading:state.isLoading,
   isError:state.isError

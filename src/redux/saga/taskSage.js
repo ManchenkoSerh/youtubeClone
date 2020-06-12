@@ -33,37 +33,43 @@ export function* watchCommentsVideo() {
 const API = new Api();
 function* fetchTask(token) {
   try {
-    //yield put(fetchDataLoading());
+    yield put(fetchDataLoading());
     const payload = yield call(API.getDate, token.payload);
-    yield put(SaveToken(payload.nextPageToken));
+    //yield put(SaveToken(payload.nextPageToken));
     yield put(getAllDataSuccess(payload.items));
-    //yield put(fetchDataLoadinghide());
+    yield put(fetchDataLoadinghide());
   } catch (e) {
-    //yield put(fetchDataError());
+    yield put(fetchDataError());
   }
 }
 function* fetchInfo(idVideo) {
-  //yield put(fetchDataLoading());
-  const res = yield call(API.getInfoVideo, idVideo.payload);
-  yield put(fetchVideoSuccess(res));
+  try {
+    yield put(fetchDataLoading());
+    const res = yield call(API.getInfoVideo, idVideo.payload);
+    yield put(fetchVideoSuccess(res));
+    yield put(fetchDataLoadinghide())
+  } catch (e) {
+    yield put(fetchDataError());
+  }
+
 }
 function* fetchSearchVideo(query) {
   try {
-    //yield put(fetchDataLoading());
+    yield put(fetchDataLoading());
     const res = yield call(API.getSearchVideo, query.payload);
     yield put(fetchSearchVideoSuccess(res.items));
-    //yield put(fetchDataLoadinghide());
+    yield put(fetchDataLoadinghide());
   } catch (e) {
-    //yield put(fetchDataError());
+    yield put(fetchDataError());
   }
 }
 function* fetchCommentsVideo(idChennal) {
   try {
-    //yield put(fetchDataLoading());
+    yield put(fetchDataLoading());
     const res = yield call(API.getCommentsVideo, idChennal.payload);
     yield put(fetchCommentsSuccess(res.items));
-    //yield put(fetchDataLoadinghide());
+    yield put(fetchDataLoadinghide());
   } catch (e) {
-    //yield put(fetchDataError());
+    yield put(fetchDataError());
   }
 }

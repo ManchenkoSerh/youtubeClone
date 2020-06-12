@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-const ListVideoSearchItem = ({ id, snippet, obj, channelId }) => {
-  console.log("test", obj);
+const ListVideoSearchItem = ({ id, snippet, obj }) => {
   return (
     <div className="container-item">
       <img
@@ -13,7 +12,6 @@ const ListVideoSearchItem = ({ id, snippet, obj, channelId }) => {
           <Link to={`/player?id=${id.videoId}`}>{snippet.title}</Link>
         </p>
         <p>{snippet.channelTitle}</p>
-        <p>{/*statistics.viewCount*/} просмотров</p>
       </div>
     </div>
   );

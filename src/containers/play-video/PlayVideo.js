@@ -6,7 +6,7 @@ import {
 import PlayList from "../../components/Playlist/Playlist";
 
 const mapStateToProps = (state) => ({
-  state: state.todos.items,
+  state: state.videos.items,
   comments: state.comments,
   obj: state.obj,
   videoInfo: state.videoInfo,

@@ -1,12 +1,12 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
 import { Input, Button, Icon } from "semantic-ui-react";
-import "./HeaderYT.scss";
+import "./Header.scss";
 import { useHistory } from "react-router-dom";
 import { keyWord } from "../../redux/action/action";
 import { connect } from "react-redux";
 
-function HeaderYT({ dispatch }) {
+function Header({ dispatch }) {
   let input;
   let history = useHistory();
 
@@ -20,6 +20,7 @@ function HeaderYT({ dispatch }) {
     }
     handleClick();
     dispatch(keyWord(input.value));
+    input.value='';
   }
   return (
     <Grid.Row>
@@ -64,4 +65,4 @@ function HeaderYT({ dispatch }) {
   );
 }
 
-export default connect()(HeaderYT);
+export default connect()(Header);

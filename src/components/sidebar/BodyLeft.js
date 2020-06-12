@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const BodyLeft = () => {
   return (
     <ButtonGroup vertical fluid>
-      <Button className="current-active">
-        <Icon name="home" className="current-active" />
+      <Button >
+        <Icon name="home" />
         <Link to="/">Главная</Link>
       </Button>
       <Button>

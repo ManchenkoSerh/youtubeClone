@@ -7,9 +7,9 @@ import {
 import { TrendingListVideo } from "../../components/trending-list/TrendingListVideo";
 
 const mapStateToProps = (state) => ({
-  state: state.todos,
-    isLoading:state.isLoading,
-  isError: state.isError
+  state: state.videos,
+  isLoading: state.isLoading,
+  isError: state.isError,
 });
 const mapDispatchToProps = (dispatch) => ({
   getList: () => dispatch(getAllData()),

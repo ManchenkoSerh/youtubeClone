@@ -5,7 +5,7 @@ import VideoList from "../../containers/video-list/VideoList";
 import CommentsItem from "../comments-item/CommentsItem";
 import { useLocation } from "react-router-dom";
 
-const PlayList = ({ comments = [], getComments, getVideo, obj, videoInfo }) => {
+const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -29,7 +29,7 @@ const PlayList = ({ comments = [], getComments, getVideo, obj, videoInfo }) => {
     return (
       <div key={id}>
         <CommentsItem
-          {...itemprops} /*getIcon={()=>getIconChennal(snippet.topLevelComment.authorChannelId.value)}*/
+          {...itemprops}
         />
       </div>
     );
