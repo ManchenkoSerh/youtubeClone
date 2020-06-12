@@ -1,4 +1,5 @@
 import React from "react";
+import './CommentsItem.scss'
 
 const CommentsItem=({snippet})=>{
         return (
@@ -7,8 +8,10 @@ const CommentsItem=({snippet})=>{
               src={snippet.topLevelComment.snippet.authorProfileImageUrl}
               alt="authorProfileImage"
             />
-            <span>{snippet.topLevelComment.snippet.authorDisplayName}</span>
-            <p>{snippet.topLevelComment.snippet.textOriginal}</p>
+            <div className='commentItem'>
+              <b><span>{snippet.topLevelComment.snippet.authorDisplayName}</span></b>
+              <p>{snippet.topLevelComment.snippet.textOriginal}</p>
+            </div>
           </>
         );
     }

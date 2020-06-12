@@ -1,19 +1,30 @@
 import React from "react";
-import { Grid } from "semantic-ui-react";
+import {Container, Grid} from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import "./TrendingListItem.css";
+import "./TrendingListItem.scss";
 
-export const TrendingListItem = ({ snippet, statistics, id, obj }) => {
+export const TrendingListItem = ({ snippet, statistics, id }) => {
+  const viewToMil = () => {
+    let startVal = statistics.viewCount
+    let val = startVal.slice(0, -5).split('')
+    val.splice(-1,0, ',')
+    return (val.join('') + ' млн. ')
+  }
+
   return (
-    <Grid.Row>
-      <img onClick={obj} src={snippet.thumbnails.medium.url} alt="VideoImage" />
-      <div>
-        <div onClick={obj}>
-          <Link to={`/player?id=${id}`}>{snippet.title}</Link>
+    <Link to={`/player?id=${id}`}>
+    <Container>
+      <Grid.Row className='rowStyle'>
+        <img src={snippet.thumbnails.medium.url} alt="VideoImage" />
+        <div className='textMargin'>
+          <div className='titleStyle'>
+            {snippet.title}
+          </div>
+          <p><span>{snippet.channelTitle}</span> • {statistics.viewCount > 1e6 ? viewToMil() : statistics.viewCount + ' тысяч '} просмотров</p>
+          <p>{snippet.description.slice(0,512)}...</p>
         </div>
-        <span>{snippet.channelTitle}</span>
-        <p>{statistics.viewCount} просмотров</p>
-      </div>
-    </Grid.Row>
+      </Grid.Row>
+    </Container>
+    </Link>
   );
 };

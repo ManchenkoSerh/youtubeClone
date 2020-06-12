@@ -2,9 +2,6 @@ import ListVideo from "../../components/list-videos/ListVideo";
 import { connect } from "react-redux";
 import {
   getAllData,
-  getObjectVideo,
-  addVideos,
-  fetchVideo,
 } from "../../redux/action/action";
 
 const mapStateToProps = (state) => ({
@@ -15,7 +12,5 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   fetchAllData: (token) => dispatch(getAllData(token)),
-  getObjVideo: (obj) => dispatch(getObjectVideo(obj)),
- // addVideos: (token) => dispatch(addVideos(token)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(ListVideo);

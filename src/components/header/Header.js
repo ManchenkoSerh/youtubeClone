@@ -39,7 +39,7 @@ function Header({ dispatch }) {
                 className="search-panel"
                 placeholder="Введите текст"
               />
-              <i className="keyboard icon"></i>
+              <i className="keyboard icon" />
             </div>
             <Button type="submit" className="ui icon button">
               <Icon name="search" />

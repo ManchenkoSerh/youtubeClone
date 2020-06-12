@@ -10,24 +10,10 @@ const ListVideo = ({
   isLoading,
   isError,
 }) => {
-  async function parseListVideo() {
-    await fetchAllData(token);
-  }
 
   useEffect(() => {
-    if (token == "") {
-      parseListVideo(token);
-    } else {
-      window.addEventListener("scroll", () => {
-        const scrolltable =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = window.scrollY;
-        if (Math.ceil(scrolled) === scrolltable) {
-          parseListVideo(token);
-        }
-      });
-    }
-  }, [token]);
+    fetchAllData(token);
+  }, [])
 
   return (
     <div>

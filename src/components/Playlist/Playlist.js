@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import "./Playlist.css";
+import "./Playlist.scss";
 import { Icon, Grid } from "semantic-ui-react";
 import VideoList from "../../containers/video-list/VideoList";
 import CommentsItem from "../comments-item/CommentsItem";
 import { useLocation } from "react-router-dom";
+import Spinner from "../spinner/spinner";
 
 const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
   function useQuery() {
@@ -27,10 +28,8 @@ const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
   const commentsAll = comments.map((item) => {
     const { id, ...itemprops } = item;
     return (
-      <div key={id}>
-        <CommentsItem
-          {...itemprops}
-        />
+      <div key={id} className='block-container__commentsItem'>
+        <CommentsItem {...itemprops} />
       </div>
     );
   });
@@ -43,20 +42,21 @@ const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
             height="700px"
             width="100%"
             title={videoInfo.id}
-          ></iframe>
+          />
           <h1>{videoInfo.snippet.title}</h1>
           <div className="block-container__info-statistics">
-            <span>{videoInfo.statistics.viewCount} просмотров</span>
-            <Icon className="thumbs up outline" />
-            <span>{videoInfo.statistics.likeCount}</span>
-            <Icon className="thumbs down outline" />
-            <span>{videoInfo.statistics.dislikeCount}</span>
+            <div><span>{videoInfo.statistics.viewCount} просмотров</span></div>
+            <div>
+              <p>
+                <Icon className="thumbs up outline" />
+                <span>{videoInfo.statistics.likeCount}</span>
+                <Icon className="thumbs down outline" />
+                <span>{videoInfo.statistics.dislikeCount}</span>
+              </p>
+            </div>
           </div>
-          <br />
           <span>{videoInfo.snippet.description}</span>
-          <div className="block-container__comments">
-            {commentsAll}
-          </div>
+          <div className="block-container__comments">{commentsAll}</div>
         </div>
       </Grid.Column>
       <Grid.Column width={2}>

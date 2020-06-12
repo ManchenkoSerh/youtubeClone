@@ -1,13 +1,12 @@
 import {ApiKey, URL} from "../types/types";
 import URlSearchParams from "url-search-params";
 export default class Api{
-    async getDate(nextToken) {
+    async getDate() {
         const res = await fetch(
             `${URL}/videos?part=snippet%2CcontentDetails%2Cstatistics&` +
             new URlSearchParams({
                 maxResults: 10,
                 chart: "mostPopular",
-                //pageToken: nextToken,
                 regionCode: "US",
                 key: ApiKey,
             })

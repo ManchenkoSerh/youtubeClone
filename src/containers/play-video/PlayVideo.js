@@ -8,7 +8,6 @@ import PlayList from "../../components/Playlist/Playlist";
 const mapStateToProps = (state) => ({
   state: state.videos.items,
   comments: state.comments,
-  obj: state.obj,
   videoInfo: state.videoInfo,
 });
 const mapDispatchToProps = (dispatch) => ({

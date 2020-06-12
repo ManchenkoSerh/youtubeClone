@@ -15,25 +15,28 @@ import {
   HIDE_LOADER,
 } from "../types/types";
 
+/**
+ * Action creator get videos for trending and main pages
+ * */
 export const getAllDataSuccess = (data) => ({
   type: FETCH_ALL_DATA_SUCCESS,
   payload: data,
 });
 
-export const getAllData = (token) => ({
+export const getAllData = () => ({
   type: FETCH_ALL_DATA_REQUEST,
-  payload: token,
 });
 
+/**
+ * Action creator for loading and error
+ * */
 export const fetchDataLoading = () => ({ type: SHOW_LOADER });
 export const fetchDataLoadinghide = () => ({ type: HIDE_LOADER });
 export const fetchDataError = () => ({ type: FETCH_DATA_ERROR });
 
-export const getObjectVideo = (data) => ({
-  type: GET_VIDEO_INFO_SUCCESS,
-  payload: data,
-});
-
+/**
+ * Action creator for videoInfo
+ * */
 export const fetchVideoSuccess = (idVideo) => ({
   type: FETCH_VIDEO_SUCCESS,
   payload: idVideo,
@@ -44,6 +47,9 @@ export const fetchVideo = (idVideo) => ({
   payload: idVideo,
 });
 
+/**
+ * Action creator for search
+ * */
 export const keyWord = (word) => ({
   type: GET_SEARCH_WORD_SUCCESS,
   payload: word,
@@ -59,6 +65,9 @@ export const fetchVideoSearch = (query) => ({
   payload: query,
 });
 
+/**
+ * Action creator for comments
+ * */
 export const fetchCommentsSuccess = (data) => ({
   type: GET_COMMENT_VIDEO_SUCCESS,
   payload: data,
@@ -67,9 +76,4 @@ export const fetchCommentsSuccess = (data) => ({
 export const fetchComments = (idChennal) => ({
   type: GET_COMMENT_VIDEO_REQUEST,
   payload: idChennal,
-});
-
-export const SaveToken = (data) => ({
-  type: SAVE_TOKEN_SUCCESS,
-  payload: data,
 });

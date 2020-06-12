@@ -31,11 +31,10 @@ export function* watchCommentsVideo() {
   yield takeEvery(GET_COMMENT_VIDEO_REQUEST, fetchCommentsVideo);
 }
 const API = new Api();
-function* fetchTask(token) {
+function* fetchTask() {
   try {
     yield put(fetchDataLoading());
-    const payload = yield call(API.getDate, token.payload);
-    //yield put(SaveToken(payload.nextPageToken));
+    const payload = yield call(API.getDate);
     yield put(getAllDataSuccess(payload.items));
     yield put(fetchDataLoadinghide());
   } catch (e) {
