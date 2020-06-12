@@ -4,10 +4,8 @@ import {
   fetchVideoSuccess,
   fetchSearchVideoSuccess,
   fetchCommentsSuccess,
-  SaveToken,
   fetchDataLoading,
   fetchDataError,
-  fetchDataLoadinghi,
   fetchDataLoadinghide,
 } from "../action/action";
 import {
@@ -46,11 +44,10 @@ function* fetchInfo(idVideo) {
     yield put(fetchDataLoading());
     const res = yield call(API.getInfoVideo, idVideo.payload);
     yield put(fetchVideoSuccess(res));
-    yield put(fetchDataLoadinghide())
+    yield put(fetchDataLoadinghide());
   } catch (e) {
     yield put(fetchDataError());
   }
-
 }
 function* fetchSearchVideo(query) {
   try {

@@ -6,7 +6,6 @@ import Spinner from "../spinner/spinner";
 export const TrendingListVideo = ({
   state = [],
   getList,
-  addVideos,
   isLoading,
   isError,
 }) => {
@@ -14,9 +13,7 @@ export const TrendingListVideo = ({
   async function parseListVideo() {
     await getList();
   }
-  async function parseAddVideo() {
-    await addVideos();
-  }
+
   useEffect(() => {
     parseListVideo();
   }, [token]);

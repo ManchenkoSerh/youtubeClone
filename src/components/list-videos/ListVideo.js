@@ -3,17 +3,10 @@ import ListVideoItem from "../list-videos-item/ListVideoItem";
 import "./ListVideo.css";
 import Spinner from "../spinner/spinner";
 
-const ListVideo = ({
-  state = [],
-  fetchAllData,
-  token,
-  isLoading,
-  isError,
-}) => {
-
+const ListVideo = ({ state = [], fetchAllData, isLoading, isError }) => {
   useEffect(() => {
-    fetchAllData(token);
-  }, [])
+    fetchAllData();
+  }, []);
 
   return (
     <div>
@@ -27,10 +20,7 @@ const ListVideo = ({
             const { id, ...itemprops } = item;
             return (
               <li key={id} className="block-container">
-                <ListVideoItem
-                  id={id}
-                  {...itemprops}
-                />
+                <ListVideoItem id={id} {...itemprops} />
               </li>
             );
           })}

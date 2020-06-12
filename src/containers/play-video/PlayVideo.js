@@ -9,6 +9,8 @@ const mapStateToProps = (state) => ({
   state: state.videos.items,
   comments: state.comments,
   videoInfo: state.videoInfo,
+  isLoading:state.isLoading,
+  isError:state.isError
 });
 const mapDispatchToProps = (dispatch) => ({
   getComments: (idv) => dispatch(fetchComments(idv)),

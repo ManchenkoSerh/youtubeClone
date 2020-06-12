@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import { Input, Button, Icon } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import "./Header.scss";
 import { useHistory } from "react-router-dom";
 import { keyWord } from "../../redux/action/action";

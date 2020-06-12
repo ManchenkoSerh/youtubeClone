@@ -4,9 +4,8 @@ import {Icon, Grid, Divider} from "semantic-ui-react";
 import VideoList from "../../containers/video-list/VideoList";
 import CommentsItem from "../comments-item/CommentsItem";
 import { useLocation } from "react-router-dom";
-import Spinner from "../spinner/spinner";
 
-const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
+const PlayList = ({ comments = [], getComments, getVideo, videoInfo, isLoading, isError }) => {
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
@@ -58,7 +57,7 @@ const PlayList = ({ comments = [], getComments, getVideo, videoInfo }) => {
           <span>{videoInfo.snippet.description}</span>
           <Divider />
           <div className="block-container__comments">
-            {commentsAll}
+            { !!isLoading || !!isError ? null : commentsAll}
           </div>
         </div>
       </Grid.Column>

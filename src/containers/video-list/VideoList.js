@@ -6,7 +6,6 @@ import {
 
 const mapStateToProps = (state) => ({
   state: state.videos,
-  token: state.token,
   isLoading:state.isLoading,
   isError:state.isError
 });
